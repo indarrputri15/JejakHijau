@@ -15,7 +15,7 @@ Fitur:
 - Melihat Campaign
 - Donasi Campaign
 - Membuat Campaign
-- Upload KTP
+- Upload Data Diri
 - Riwayat Kontribusi
 - Edit Profile
 - Logout
