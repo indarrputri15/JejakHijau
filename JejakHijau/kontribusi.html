@@ -1,0 +1,531 @@
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontribusi | JejakHijau</title>
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet"> -->
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="kontribusi.css">
+  <!-- ICON -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="navbar-logo">
+    Jejak<span>Hijau</span>
+  </a>
+
+  <div class="navbar-container">
+    <ul class="ul-navbar">
+      
+      <li><a href="index.html">BERANDA</a></li>
+      <li><a href="index.html#dampak">DAMPAK</a></li>
+      <li><a href="index.html#tentang">TENTANG</a></li>
+      <li><a href="bantuan.html">BANTUAN</a></li>
+      <!-- <li><a href="kontribusi.html" class="menu-kontribusi active">KONTRIBUSI</a></li> -->
+
+    </ul>
+
+  </div>
+
+  <div class="navbar-extra">
+
+    <a href="register.html">MASUK</a>
+    <a href="login.php"><i data-feather="user"></i></a>
+    <a href="#" id="menu-btn"><i data-feather="menu"></i></a>
+
+  </div>
+
+</nav>
+
+<!-- ================= HEADER ================= -->
+<section class="header-kontribusi">
+
+  <span>Halaman Kontribusi</span>
+  <h1>
+    Pilih Cara Berkontribusi 🌱
+  </h1>
+  <p>
+    Donasikan hartamu atau buat campaign
+    untuk membantu penghijauan bumi bersama JejakHijau.
+  </p>
+
+</section>
+
+<!-- TAB MENU -->
+<section class="tab-section">
+  <div class="tab-container">
+    <button class="tab-btn active" id="btn-campaign">Campaign</button>
+    <button class="tab-btn" id="btn-donasi">Donasi</button>
+    <button class="tab-btn" id="btn-buat">Buat Campaign</button>
+  </div>
+
+</section>
+
+<!-- PANEL CAMPAIGN -->
+<section class="panel-section" id="panel-campaign">
+
+  <div class="title-section">
+    <h2>Campaign Berlangsung</h2>
+    <p>
+      Pilih campaign yang ingin kamu bantu.
+    </p>
+  </div>
+
+  <div class="campaign-container">
+
+    <!-- CARD -->
+    <div class="campaign-card">
+      <div class="campaign-image">
+        <img src="img/forest1.jpg">
+      </div>
+
+      <div class="campaign-content">
+        <span>Campaign Aktif</span>
+        <h3>
+          Reboisasi Hutan Kalimantan
+        </h3>
+
+        <p>
+          Membantu penghijauan kawasan hutan
+          yang mengalami kerusakan.
+        </p>
+
+        <div class="campaign-progress">
+
+          <div class="progress-bar">
+
+            <div class="progress-fill"></div>
+
+          </div>
+
+          <small>
+            1.250 / 5.000 pohon
+          </small>
+
+        </div>
+        <button class="btn detail-btn">Lihat Detail</button>
+      </div>
+
+    </div>
+
+    <!-- CARD -->
+    <div class="campaign-card">
+      <div class="campaign-image">
+        <img src="img/mangrove.jpg">
+      </div>
+
+      <div class="campaign-content">
+        <span>Campaign Aktif</span>
+        <h3>
+          Tanam Mangrove Sulawesi
+        </h3>
+
+        <p>
+          Menjaga kawasan pesisir dari abrasi
+          dan kerusakan lingkungan.
+        </p>
+
+        <div class="campaign-progress">
+          <div class="progress-bar">
+            <div class="progress-fill fill2"></div>
+          </div>
+          <small>
+            800 / 2.000 pohon
+          </small>
+        </div>
+        <button class="btn detail-btn">Lihat Detail</button>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- PANEL DONASI -->
+<section class="panel-section hidden" id="panel-donasi">
+
+  <div class="title-section">
+    <h2>Form Donasi</h2>
+    <p>
+      Setiap Rp 10.000 = 1 pohon 🌱
+    </p>
+  </div>
+
+  <div class="form-container">
+    <form id="form-donasi">
+      <table class="form-table">
+        <tr>
+          <td>Campaign</td>
+          <td>
+            <select id="campaign">
+
+              <option>-- Pilih Campaign --</option>
+              <option>Reboisasi Kalimantan</option>
+              <option>Tanam Mangrove</option>
+
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Jumlah Donasi</td>
+          <td>
+            <input type="number" id="jumlah-donasi" placeholder="Minimal 10.000">
+            <div class="quick-container">
+              <button type="button" class="quick-btn" onclick="setJumlah(25000)">25K</button>
+              <button type="button" class="quick-btn" onclick="setJumlah(50000)">50K</button>
+              <button type="button" class="quick-btn" onclick="setJumlah(100000)">100K</button>
+            </div>
+
+            <div class="estimasi-box">
+              🌱 Estimasi:
+              <span id="estimasi-pohon">0</span>
+              pohon
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Pesan</td>
+          <td>
+            <textarea id="pesan" rows="4" placeholder="Pesan dukunganmu..."></textarea>
+          </td>
+        </tr>
+      </table>
+      <button type="submit" class="btn">Kirim Donasi</button>
+    </form>
+  </div>
+
+</section>
+
+<!-- PANEL BUAT CAMPAIGN -->
+<section class="panel-section hidden" id="panel-buat">
+
+  <div class="title-section">
+    <h2>Buat Campaign</h2>
+    <p>
+      Campaign akan diverifikasi admin
+      sebelum ditampilkan.
+    </p>
+  </div>
+
+  <div class="form-container">
+    <form id="form-campaign">
+      <table class="form-table">
+        <tr>
+          <td>Nama Lengkap</td>
+        <td>
+          <input type="text" placeholder="Masukkan nama lengkap">
+        </td>
+        </tr>
+        <tr>
+          <td>Judul Campaign</td>
+          <td>
+            <input type="text" placeholder="Contoh: Reboisasi Hutan Aceh">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Deskripsi</td>
+          <td>
+            <textarea rows="5" placeholder="Jelaskan campaign kamu..."></textarea>
+          </td>
+
+        </tr>
+        <tr>
+          <td>Lokasi</td>
+          <td>
+            <input type="text" placeholder="Provinsi / Kota">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Target Pohon</td>
+          <td>
+            <input type="number" placeholder="Jumlah pohon">
+          </td>
+
+        </tr>
+        <tr>
+          <td>Upload KTP</td>
+          <td>
+            <input type="file">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Tanggal Mulai</td>
+          <td>
+            <input type="date">
+          </td>
+        </tr>
+        <tr>
+          <td>Tanggal Selesai</td>
+          <td>
+            <input type="date">
+          </td>
+        </tr>
+      </table>
+
+      <button type="submit" class="btn">
+        Ajukan Campaign
+      </button>
+    </form>
+  </div>
+
+</section>
+
+<!-- MODAL -->
+<!-- <div class="modal hidden" id="modal">
+  <div class="modal-box">
+    <button class="close-modal" id="close-modal">
+
+      <i data-feather="x"></i>
+
+    </button>
+
+    <h2>
+      Detail Campaign
+    </h2>
+
+    <p>
+      Informasi lengkap campaign akan tampil di sini.
+    </p>
+
+  </div>
+
+</div> -->
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <h2>JejakHijau</h2>
+      <p>Langkah kecilmu, dampak besar bagi bumi 🌏</p>
+    </div>
+
+    <div class="footer-menu">
+      <h3>Menu</h3>
+      <a href="index.html">Beranda</a>
+      <a href="index.html#dampak">Dampak</a>
+      <a href="index.html#tentang">Tentang</a>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Kontak</h3>
+      <p>Email: jejakhijau@gmail.com</p>
+      <p>Instagram: @jejakhijau</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 JejakHijau. All Rights Reserved.</p>
+  </div>
+
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+
+feather.replace();
+
+
+// ================= HAMBURGER =================
+const menuBtn =
+document.querySelector("#menu-btn");
+
+const navbarNav =
+document.querySelector(".ul-navbar");
+
+menuBtn.addEventListener("click", function(e){
+
+  e.preventDefault();
+
+  navbarNav.classList.toggle("active");
+
+});
+
+
+// ================= TAB =================
+const btnCampaign =
+document.querySelector("#btn-campaign");
+
+const btnDonasi =
+document.querySelector("#btn-donasi");
+
+const btnBuat =
+document.querySelector("#btn-buat");
+
+const panelCampaign =
+document.querySelector("#panel-campaign");
+
+const panelDonasi =
+document.querySelector("#panel-donasi");
+
+const panelBuat =
+document.querySelector("#panel-buat");
+
+
+btnCampaign.addEventListener("click", function(){
+
+  tampilPanel("campaign");
+
+});
+
+btnDonasi.addEventListener("click", function(){
+
+  tampilPanel("donasi");
+
+});
+
+btnBuat.addEventListener("click", function(){
+
+  tampilPanel("buat");
+
+});
+
+
+function tampilPanel(menu){
+
+  panelCampaign.classList.add("hidden");
+
+  panelDonasi.classList.add("hidden");
+
+  panelBuat.classList.add("hidden");
+
+  btnCampaign.classList.remove("active");
+
+  btnDonasi.classList.remove("active");
+
+  btnBuat.classList.remove("active");
+
+
+  if(menu == "campaign"){
+
+    panelCampaign.classList.remove("hidden");
+
+    btnCampaign.classList.add("active");
+
+  }
+
+  else if(menu == "donasi"){
+
+    panelDonasi.classList.remove("hidden");
+
+    btnDonasi.classList.add("active");
+
+  }
+
+  else if(menu == "buat"){
+
+    panelBuat.classList.remove("hidden");
+
+    btnBuat.classList.add("active");
+
+  }
+
+}
+
+
+// ================= QUICK BUTTON =================
+function setJumlah(nilai){
+
+  document.querySelector("#jumlah-donasi").value = nilai;
+
+  updatePohon();
+
+}
+
+
+// ================= ESTIMASI POHON =================
+const inputDonasi =
+document.querySelector("#jumlah-donasi");
+
+const estimasi =
+document.querySelector("#estimasi-pohon");
+
+inputDonasi.addEventListener("input", updatePohon);
+
+function updatePohon(){
+
+  const jumlah =
+  parseInt(inputDonasi.value);
+
+  if(!isNaN(jumlah)){
+
+    estimasi.textContent =
+    Math.floor(jumlah / 10000);
+
+  }
+
+  else{
+
+    estimasi.textContent = 0;
+
+  }
+
+}
+
+
+// ================= MODAL =================
+const modal =
+document.querySelector("#modal");
+
+const detailBtn =
+document.querySelectorAll(".detail-btn");
+
+const closeModal =
+document.querySelector("#close-modal");
+
+
+detailBtn.forEach(function(btn){
+
+  btn.addEventListener("click", function(){
+
+    modal.classList.remove("hidden");
+
+  });
+
+});
+
+
+closeModal.addEventListener("click", function(){
+
+  modal.classList.add("hidden");
+
+});
+
+
+// ================= VALIDASI DONASI =================
+const formDonasi =
+document.querySelector("#form-donasi");
+
+formDonasi.addEventListener("submit", function(e){
+
+  const jumlah =
+  document.querySelector("#jumlah-donasi").value;
+
+  if(jumlah < 10000){
+
+    e.preventDefault();
+
+    alert("Minimal donasi Rp 10.000");
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>
