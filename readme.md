@@ -6,6 +6,18 @@ JejakHijau merupakan sebuah platform campaign lingkungan dan donasi penghijauan 
 ## Alamat
 Localhost
 
+## Team Members and Responsibilities
+| No | Nama Anggota | Role | Tanggung Jawab |
+|---|---|---|---|
+| 1 | Nama Anggota 1 | Frontend / UI-UX | Membuat tampilan website, landing page, responsive design, navigation bar, hamburger menu, content slider, tampilan campaign, halaman donasi, halaman profile, serta mengatur keseluruhan desain antarmuka website menggunakan HTML, CSS, dan JavaScript. |
+| 2 | Nama Anggota 2 | Backend / Database | Membuat sistem login dan register, struktur database, sistem campaign, sistem donasi, session login, upload file, validasi form, serta integrasi backend menggunakan PHP dan MySQL. |
+| 3 | Nama Anggota 3 | Content / Dokumentasi | Menyusun konsep website, membuat isi konten campaign dan awareness lingkungan, melakukan testing website, membuat sitemap, dokumentasi project, laporan, serta menyiapkan bahan presentasi project. |
+
+## NIM Anggota Kelompok
+- Khofipah Indar Putri: F1D02410062
+- Erlita Jannatul Aulia: F1D02410006
+- Yunda Hayatus Soleha: F1D02410029
+
 ## Menu Utama
 ### Aktor User
 User merupakan pengguna website yang dapat melakukan donasi campaign lingkungan maupun membuat campaign penghijauan baru.
