@@ -9,9 +9,9 @@ Localhost
 ## Team Members and Responsibilities
 | No | Nama Anggota | Role | Tanggung Jawab |
 |---|---|---|---|
-| 1 | Nama Anggota 1 | Frontend / UI-UX | Membuat tampilan website, landing page, responsive design, navigation bar, hamburger menu, content slider, tampilan campaign, halaman donasi, halaman profile, serta mengatur keseluruhan desain antarmuka website menggunakan HTML, CSS, dan JavaScript. |
-| 2 | Nama Anggota 2 | Backend / Database | Membuat sistem login dan register, struktur database, sistem campaign, sistem donasi, session login, upload file, validasi form, serta integrasi backend menggunakan PHP dan MySQL. |
-| 3 | Nama Anggota 3 | Content / Dokumentasi | Menyusun konsep website, membuat isi konten campaign dan awareness lingkungan, melakukan testing website, membuat sitemap, dokumentasi project, laporan, serta menyiapkan bahan presentasi project. |
+| 1 | Khofipah Indar Putri | Frontend / UI-UX | Membuat tampilan website, landing page, responsive design, navigation bar, hamburger menu, content slider, tampilan campaign, halaman donasi, halaman profile, serta mengatur keseluruhan desain antarmuka website menggunakan HTML, CSS, dan JavaScript. |
+| 2 | Erlita Jannatul Aulia | Backend / Database | Membuat sistem login dan register, struktur database, sistem campaign, sistem donasi, session login, upload file, validasi form, serta integrasi backend menggunakan PHP dan MySQL. |
+| 3 | Yunda Hayatus Soleha | Content / Dokumentasi | Menyusun konsep website, membuat isi konten campaign dan awareness lingkungan, melakukan testing website, membuat sitemap, dokumentasi project, laporan, serta menyiapkan bahan presentasi project. |
 
 ## NIM Anggota Kelompok
 - Khofipah Indar Putri: F1D02410062
