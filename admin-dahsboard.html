@@ -44,10 +44,8 @@
 
 
 <!-- MESSAGES -->
-<!-- Dipindahkan dari: style="max-width: 1100px; margin: 20px auto; padding: 15px 40px;" -->
 <!-- PHP: if (!empty($success)) -->
 <div class="admin-msg-wrapper" id="msg-success-wrapper" style="display:none;">
-  <!-- Dipindahkan dari: style="background-color: #eafaf1; border-left: 4px solid #27ae60; ..." -->
   <div class="msg-success" id="admin-msg-success">
     <!-- PHP: echo htmlspecialchars($success) -->
     Operasi berhasil!
@@ -56,7 +54,6 @@
 
 <!-- PHP: if (!empty($error)) -->
 <div class="admin-msg-wrapper" id="msg-error-wrapper" style="display:none;">
-  <!-- Dipindahkan dari: style="background-color: #ffebee; border-left: 4px solid #e74c3c; ..." -->
   <div class="msg-error" id="admin-msg-error">
     Terjadi kesalahan!
   </div>
@@ -67,7 +64,6 @@
 <!-- ════════════════════════════════════════════════════
      SECTION 1: VERIFIKASI CAMPAIGN (pending)
      ════════════════════════════════════════════════════ -->
-<!-- Dipindahkan dari: style="padding-top: 40px;" -->
 <section class="admin-section admin-section--pt" id="campaigns-section">
   <div class="section-title">
     <!-- PHP: count($pending_campaigns) -->
@@ -150,7 +146,6 @@
   </table>
 
   <!-- PHP: else — tidak ada campaign pending -->
-  <!-- Dipindahkan dari: style="padding: 40px; text-align: center; color: #999;" -->
   <!--
   <div class="admin-empty-state">
     <p>Tidak ada campaign yang menunggu verifikasi</p>
@@ -163,7 +158,6 @@
 <!-- ════════════════════════════════════════════════════
      SECTION 2: PERMINTAAN BANTUAN
      ════════════════════════════════════════════════════ -->
-<!-- Dipindahkan dari: style="padding-top: 40px;" -->
 <section class="admin-section admin-section--pt" id="help-section">
   <div class="section-title">
     <!-- PHP: count($help_requests) -->
@@ -196,11 +190,11 @@
         <td>donasi</td>
         <td>Bagaimana cara konfirmasi pembayaran...</td>
         <td>
-          <!-- Dipindahkan dari: style="background-color: #fff3cd; color: #856404; padding: 5px 10px; border-radius: 5px; font-size: 12px; font-weight: 600;" -->
+          
           <span class="status-badge status-pending-badge">Pending</span>
         </td>
         <td>
-          <!-- Dipindahkan dari: style="display: inline;" -->
+
           <form method="POST" class="form-inline">
             <input type="hidden" name="help_id" value="1">
             <input type="hidden" name="help_action" value="process">
@@ -219,7 +213,7 @@
         <td>campaign</td>
         <td>Saya ingin mengajukan campaign baru...</td>
         <td>
-          <!-- Dipindahkan dari: style="background-color: #d8f3dc; color: #2d6a4f; padding: 5px 10px; border-radius: 5px; font-size: 12px; font-weight: 600;" -->
+
           <span class="status-badge status-processed">Processed</span>
         </td>
         <td>
@@ -235,7 +229,6 @@
   </table>
 
   <!-- PHP: else — tidak ada permintaan bantuan -->
-  <!-- Dipindahkan dari: style="padding: 40px; text-align: center; color: #999;" -->
   <!--
   <div class="admin-empty-state">
     <p>Tidak ada permintaan bantuan</p>
@@ -294,7 +287,6 @@
   </table>
 
   <!-- PHP: else -->
-  <!-- Dipindahkan dari: style="padding: 40px; text-align: center; color: #999;" -->
   <!--
   <p class="admin-empty-state">Belum ada campaign yang aktif.</p>
   -->
@@ -303,7 +295,6 @@
 
 
 <!-- FOOTER -->
-<!-- Dipindahkan dari: style="margin-top: 60px;" -->
 <footer class="footer footer--admin">
   <div class="footer-container">
     <div class="footer-logo">

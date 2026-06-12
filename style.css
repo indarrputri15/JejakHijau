@@ -219,7 +219,7 @@ input, select, textarea, button {
   color: #c0392b;
 }
 
-/* Pesan Sukses — dipindahkan dari inline style di semua halaman */
+
 .msg-success {
   background-color: #eafaf1;
   border-left: 4px solid #27ae60;
@@ -277,8 +277,7 @@ input, select, textarea, button {
   font-weight: 500;
 }
 
-/* [admin-dashboard.php — wrapper pesan]
-   Dipindahkan dari: style="max-width: 1100px; margin: 20px auto; padding: 15px 40px;" */
+/* [admin-dashboard.php — wrapper pesan] */
 .admin-msg-wrapper {
   max-width: 1100px;
   margin: 20px auto;
@@ -306,8 +305,7 @@ input, select, textarea, button {
   background-color: #1a3728;
 }
 
-/* [campaign-detail.php — tombol donasi]
-   Dipindahkan dari: style="padding: 16px 40px; font-size: 16px;" */
+/* [campaign-detail.php — tombol donasi] */
 .btn-primary--lg {
   padding: 16px 40px;
   font-size: 16px;
@@ -355,8 +353,7 @@ input, select, textarea, button {
   background-color: #1a3728;
 }
 
-/* [create-campaign.php, donation-form.php, profile.php — tombol kembali/batal]
-   Dipindahkan dari: style="background-color: #999;" */
+/* [create-campaign.php, donation-form.php, profile.php — tombol kembali/batal]*/
 .btn-kirim--secondary {
   background-color: #999;
 }
@@ -412,8 +409,7 @@ input, select, textarea, button {
   background-color: #1a3728;
 }
 
-/* [admin-dashboard.php — tombol proses bantuan kecil]
-   Dipindahkan dari: style="font-size: 12px; padding: 8px 12px;" */
+/* [admin-dashboard.php — tombol proses bantuan kecil] */
 .btn-approve--sm {
   font-size: 12px;
   padding: 8px 12px;
@@ -510,8 +506,7 @@ input, select, textarea, button {
 /* [bantuan.php — form container lebih lebar, sudah default 900px] */
 /* tidak perlu class khusus, sudah sama dengan .form-container */
 
-/* [donation-form.php, create-campaign.php, profile.php]
-   Dipindahkan dari: style="width: 700px;" */
+/* [donation-form.php, create-campaign.php, profile.php] */
 .form-container--md {
   width: 700px;
 }
@@ -1055,8 +1050,7 @@ input, select, textarea, button {
   font-size: 13px;
 }
 
-/* [campaigns.php — kotak kosong jika tidak ada campaign]
-   Dipindahkan dari: style="grid-column: 1 / -1; text-align: center; padding: 40px;" */
+/* [campaigns.php — kotak kosong jika tidak ada campaign] */
 .campaigns-empty {
   grid-column: 1 / -1;
   text-align: center;
@@ -1069,8 +1063,7 @@ input, select, textarea, button {
 }
 
 /* --- Campaign Create Box --- */
-/* [campaigns.php — kotak ajukan campaign]
-   Dipindahkan dari: style="background: linear-gradient(...); border: 2px dashed #2d6a4f;" */
+/* [campaigns.php — kotak ajukan campaign] */
 .campaign-create-box {
   grid-column: 1 / -1;
   width: 100%;
@@ -1087,15 +1080,13 @@ input, select, textarea, button {
   display: none;
 }
 
-/* [campaigns.php — konten dalam create box]
-   Dipindahkan dari: style="text-align: center; padding: 30px;" */
+/* [campaigns.php — konten dalam create box] */
 .campaign-create-inner {
   text-align: center;
   padding: 30px;
 }
 
-/* [campaigns.php — judul dalam create box]
-   Dipindahkan dari: style="color: #1a3728; margin-bottom: 15px;" */
+/* [campaigns.php — judul dalam create box] */
 .campaign-create-inner h3 {
   color: #1a3728;
   margin-bottom: 15px;
@@ -1103,8 +1094,7 @@ input, select, textarea, button {
   font-family: 'Playfair Display', serif;
 }
 
-/* [campaigns.php — deskripsi dalam create box]
-   Dipindahkan dari: style="color: #6b8f76; margin-bottom: 20px;" */
+/* [campaigns.php — deskripsi dalam create box] */
 .campaign-create-inner p {
   color: #6b8f76;
   margin-bottom: 20px;
@@ -1121,22 +1111,19 @@ input, select, textarea, button {
   font-weight: 600;
 }
 
-/* [admin-dashboard.php — status campaign aktif]
-   Dipindahkan dari: style="background-color: #d8f3dc; color: #2d6a4f; ..." */
+/* [admin-dashboard.php — status campaign aktif] */
 .status-active {
   background-color: #d8f3dc;
   color: #2d6a4f;
 }
 
-/* [admin-dashboard.php — status bantuan "processed"]
-   Dipindahkan dari: style="${status} === 'processed' ? '#d8f3dc' : '#fff3cd' ..." */
+/* [admin-dashboard.php — status bantuan "processed"] */
 .status-processed {
   background-color: #d8f3dc;
   color: #2d6a4f;
 }
 
-/* [admin-dashboard.php — status bantuan "pending"]
-   Dipindahkan dari: status == pending → background #fff3cd, color #856404 */
+/* [admin-dashboard.php — status bantuan "pending"] */
 .status-pending-badge {
   background-color: #fff3cd;
   color: #856404;
@@ -1199,23 +1186,20 @@ input, select, textarea, button {
    Hampir semua dari inline style — dipindahkan ke sini
    ============================================================ */
 
-/* [campaign-detail.php — section gambar cover]
-   Dipindahkan dari: style="padding-top: 80px; padding-bottom: 40px;" */
+/* [campaign-detail.php — section gambar cover] */
 .campaign-detail-section {
   padding-top: 80px;
   padding-bottom: 40px;
 }
 
-/* [campaign-detail.php — wrapper konten max 1000px]
-   Dipindahkan dari: style="max-width: 1000px; margin: auto; padding: 0 40px;" */
+/* [campaign-detail.php — wrapper konten max 1000px] */
 .campaign-detail-inner {
   max-width: 1000px;
   margin: auto;
   padding: 0 40px;
 }
 
-/* [campaign-detail.php — gambar cover]
-   Dipindahkan dari: style="width: 100%; height: 400px; object-fit: cover; border-radius: 20px;" */
+/* [campaign-detail.php — gambar cover]*/
 .campaign-cover-img {
   width: 100%;
   height: 400px;
@@ -1223,8 +1207,7 @@ input, select, textarea, button {
   border-radius: 20px;
 }
 
-/* [campaign-detail.php — judul h1 campaign]
-   Dipindahkan dari: style="font-size: 42px; color: #1a3728; margin-bottom: 20px; font-family: ..." */
+/* [campaign-detail.php — judul h1 campaign]*/
 .campaign-title-h1 {
   font-size: 42px;
   color: #1a3728;
@@ -1232,8 +1215,7 @@ input, select, textarea, button {
   font-family: 'Playfair Display', serif;
 }
 
-/* [campaign-detail.php — kartu info (Dana, Tentang, Lokasi)]
-   Dipindahkan dari: style="background-color: white; padding: 30px; border-radius: 15px; border: 1px solid #d8e7dc; margin-bottom: 30px;" */
+/* [campaign-detail.php — kartu info (Dana, Tentang, Lokasi)]*/
 .campaign-info-card {
   background-color: white;
   padding: 30px;
@@ -1242,8 +1224,7 @@ input, select, textarea, button {
   margin-bottom: 30px;
 }
 
-/* [campaign-detail.php — judul dalam kartu info (Dana Terkumpul, Tentang, Lokasi)]
-   Dipindahkan dari: style="color: #1a3728; margin-bottom: 20px;" dan "margin-bottom: 15px;" */
+/* [campaign-detail.php — judul dalam kartu info (Dana Terkumpul, Tentang, Lokasi)] */
 .campaign-info-card h3 {
   color: #1a3728;
   margin-bottom: 20px;
@@ -1253,8 +1234,7 @@ input, select, textarea, button {
   margin-bottom: 15px;
 }
 
-/* [campaign-detail.php — baris dana terkumpul vs target]
-   Dipindahkan dari: style="display: flex; justify-content: space-between; margin-bottom: 15px; align-items: center;" */
+/* [campaign-detail.php — baris dana terkumpul vs target] */
 .dana-row {
   display: flex;
   justify-content: space-between;
@@ -1262,37 +1242,32 @@ input, select, textarea, button {
   align-items: center;
 }
 
-/* [campaign-detail.php — label "Total Dana" / "Target"]
-   Dipindahkan dari: style="color: #6b8f76; font-size: 14px;" */
+/* [campaign-detail.php — label "Total Dana" / "Target"] */
 .dana-label {
   color: #6b8f76;
   font-size: 14px;
 }
 
-/* [campaign-detail.php — angka dana terkumpul (hijau)]
-   Dipindahkan dari: style="font-size: 24px; font-weight: bold; color: #2d6a4f;" */
+/* [campaign-detail.php — angka dana terkumpul (hijau)] */
 .dana-amount-green {
   font-size: 24px;
   font-weight: bold;
   color: #2d6a4f;
 }
 
-/* [campaign-detail.php — angka target (gelap)]
-   Dipindahkan dari: style="font-size: 24px; font-weight: bold; color: #1a3728;" */
+/* [campaign-detail.php — angka target (gelap)]*/
 .dana-amount-dark {
   font-size: 24px;
   font-weight: bold;
   color: #1a3728;
 }
 
-/* [campaign-detail.php — kolom kanan (target rata kanan)]
-   Dipindahkan dari: style="text-align: right;" */
+/* [campaign-detail.php — kolom kanan (target rata kanan)]*/
 .dana-right {
   text-align: right;
 }
 
-/* [campaign-detail.php — progress bar besar dengan persentase]
-   Dipindahkan dari: style="height: 30px; background-color: #edf7ef; border-radius: 20px; overflow: hidden; border: 2px solid #d8e7dc;" */
+/* [campaign-detail.php — progress bar besar dengan persentase]*/
 .progress-bar--lg {
   height: 30px;
   background-color: #edf7ef;
@@ -1302,8 +1277,7 @@ input, select, textarea, button {
   width: 100%;
 }
 
-/* [campaign-detail.php — fill progress bar besar]
-   Dipindahkan dari: style="background-color: #52b788; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;" */
+/* [campaign-detail.php — fill progress bar besar] */
 .progress-fill--lg {
   height: 100%;
   background-color: #52b788;
@@ -1315,23 +1289,20 @@ input, select, textarea, button {
   font-size: 14px;
 }
 
-/* [campaign-detail.php — teks deskripsi campaign]
-   Dipindahkan dari: style="color: #3d5a47; line-height: 1.8; font-size: 15px;" */
+/* [campaign-detail.php — teks deskripsi campaign] */
 .campaign-desc-text {
   color: #3d5a47;
   line-height: 1.8;
   font-size: 15px;
 }
 
-/* [campaign-detail.php — teks lokasi]
-   Dipindahkan dari: style="color: #3d5a47; font-size: 15px;" */
+/* [campaign-detail.php — teks lokasi] */
 .campaign-lokasi-text {
   color: #3d5a47;
   font-size: 15px;
 }
 
-/* [campaign-detail.php — wrapper Google Maps iframe]
-   Dipindahkan dari: style="margin-top: 20px; border-radius: 10px; overflow: hidden; height: 300px;" */
+/* [campaign-detail.php — wrapper Google Maps iframe] */
 .map-wrapper {
   margin-top: 20px;
   border-radius: 10px;
@@ -1339,8 +1310,7 @@ input, select, textarea, button {
   height: 300px;
 }
 
-/* [campaign-detail.php — area tombol donasi di bawah]
-   Dipindahkan dari: style="text-align: center; margin-bottom: 60px;" */
+/* [campaign-detail.php — area tombol donasi di bawah] */
 .donate-action {
   text-align: center;
   margin-bottom: 60px;
@@ -1422,16 +1392,14 @@ input, select, textarea, button {
   font-family: 'Playfair Display', serif;
 }
 
-/* [signup.php — panel kanan lebih lebar + scroll]
-   Dipindahkan dari: style="width: 620px; max-height: 80vh; overflow-y: auto;" */
+/* [signup.php — panel kanan lebih lebar + scroll] */
 .login-right--lg {
   width: 620px;
   max-height: 80vh;
   overflow-y: auto;
 }
 
-/* [signup.php — error hint email]
-   Dipindahkan dari: style="color: #e74c3c; display: none;" */
+/* [signup.php — error hint email] */
 .email-error {
   color: #e74c3c;
   font-size: 12px;
@@ -1439,8 +1407,7 @@ input, select, textarea, button {
   display: none;
 }
 
-/* [login.php, signup.php, admin-login.php — teks bawah form]
-   Dipindahkan dari: style="margin-top: 20px; text-align: center; color: #3d5a47;" */
+/* [login.php, signup.php, admin-login.php — teks bawah form] */
 .bottom-text {
   margin-top: 20px;
   text-align: center;
@@ -1477,8 +1444,7 @@ input, select, textarea, button {
   line-height: 1.8;
 }
 
-/* [donation-form.php — box estimasi pohon]
-   Dipindahkan dari: style="background-color: #edf7ef; padding: 12px; border-radius: 8px; margin-top: 10px; border-left: 4px solid #2d6a4f;" */
+/* [donation-form.php — box estimasi pohon] */
 .estimasi-note {
   background-color: #edf7ef;
   padding: 12px;
@@ -1573,9 +1539,7 @@ input, select, textarea, button {
    15. HALAMAN: profile.php
    ============================================================ */
 
-/* [profile.php — header halaman profil]
-   Dipindahkan dari: style="padding-top: 140px; padding-bottom: 70px;"
-   → menggunakan .header-bantuan yang sudah ada (padding sama) */
+/* [profile.php — header halaman profil] */
 /* Tidak perlu class baru, cukup gunakan .header-bantuan */
 
 .profile-container {
@@ -1601,9 +1565,7 @@ input, select, textarea, button {
    16. HALAMAN: admin-login.php
    ============================================================ */
 
-/* [admin-login.php — info kredensial demo]
-   Dipindahkan dari: style="margin-top: 20px; text-align: center; color: #3d5a47; font-size: 13px;"
-   → gunakan .bottom-text.bottom-text--sm */
+/* [admin-login.php — info kredensial demo]*/
 /* Tidak perlu class baru */
 
 
@@ -1702,8 +1664,7 @@ input, select, textarea, button {
   margin-bottom: 70px;
 }
 
-/* [admin-dashboard.php — padding atas section]
-   Dipindahkan dari: style="padding-top: 40px;" */
+/* [admin-dashboard.php — padding atas section] */
 .admin-section--pt {
   padding-top: 40px;
 }
@@ -1740,14 +1701,12 @@ input, select, textarea, button {
   color: #3d5a47;
 }
 
-/* [admin-dashboard.php — form inline di dalam tabel (tombol aksi)]
-   Dipindahkan dari: style="display: inline;" */
+/* [admin-dashboard.php — form inline di dalam tabel (tombol aksi)] */
 .form-inline {
   display: inline;
 }
 
-/* [admin-dashboard.php — empty state tabel]
-   Dipindahkan dari: style="padding: 40px; text-align: center; color: #999;" */
+/* [admin-dashboard.php — empty state tabel]*/
 .admin-empty-state {
   padding: 40px;
   text-align: center;
@@ -1757,7 +1716,7 @@ input, select, textarea, button {
 
 /* ============================================================
    18. RESPONSIVE
-   (dikomentari - siap diaktifkan saat dibutuhkan)
+   (diaktifkan kalo jadi dipake)
    ============================================================ */
 
 /* Tablet */

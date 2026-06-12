@@ -45,20 +45,14 @@
     <div class="login-right">
       <h2>Login Account</h2>
 
-      <!-- Pesan Error — dipindahkan dari inline style PHP -->
-      <!-- PHP: if (!empty($error)) -->
       <div class="msg-error" id="login-error" style="display:none;">
-        <!-- PHP: echo htmlspecialchars($error) -->
         Pesan error dari server akan muncul di sini.
       </div>
 
-      <!-- Pesan Sukses — dipindahkan dari inline style PHP -->
-      <!-- PHP: if (!empty($success)) -->
       <div class="msg-success" id="login-success" style="display:none;">
         Login berhasil! Mengalihkan...
       </div>
 
-      <!-- <form method="POST" action="login.php" id="form-login"> -->
        <form id="form-login">
         <div class="input-group">
           <label>Email</label>
@@ -71,7 +65,6 @@
         <button type="submit" class="btn-auth">Login</button>
       </form>
 
-      <!-- Dipindahkan dari: style="margin-top: 20px; text-align: center; color: #3d5a47;" -->
       <div class="bottom-text">Belum punya akun?<a href="signup.html">Daftar sekarang</a></div>
     </div>
 
