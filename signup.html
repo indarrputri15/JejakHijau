@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | JejakHijau</title>
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ICON -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="navbar-logo">Jejak<span>Hijau</span></a>
+</nav>
+<!-- NAVBAR END -->
+
+
+<!-- SIGNUP SECTION -->
+<section class="login-section">
+  <div class="login-container">
+
+    <!-- LEFT -->
+    <div class="login-left">
+      <span>Bergabung Sekarang</span>
+      <h1>Jadi Bagian Dari JejakHijau 🌱</h1>
+      <p>
+        Buat akun untuk mulai berdonasi
+        dan membantu penghijauan bumi.
+      </p>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="login-right login-right--lg">
+      <h2>Create Account</h2>
+
+      <div class="msg-error msg--sm" id="signup-error" style="display:none;">
+        <!-- PHP: echo htmlspecialchars($error) -->
+        Pesan error dari server.
+      </div>
+
+      <div class="msg-success msg--sm" id="signup-success" style="display:none;">
+        Akun berhasil dibuat! Silahkan login.
+      </div>
+
+      <!-- <form method="POST" action="signup.php" id="form-signup"> -->
+        <form id="form-signup">
+        <div class="input-group">
+          <label>Nama Lengkap</label>
+          <input type="text" name="nama_lengkap" placeholder="Masukkan nama lengkap" required>
+        </div>
+
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="Masukkan email" required>
+          <small class="email-error" id="email-error">Email sudah terdaftar</small>
+        </div>
+
+        <div class="input-group">
+          <label>No. Handphone</label>
+          <input type="tel" name="no_hp" placeholder="Masukkan nomor handphone" required>
+        </div>
+
+        <div class="input-group">
+          <label>Provinsi</label>
+          <input type="text" name="provinsi" placeholder="Masukkan provinsi" required>
+        </div>
+
+        <div class="input-group">
+          <label>Alamat</label>
+          <textarea name="alamat" placeholder="Masukkan alamat lengkap" rows="3" required></textarea>
+        </div>
+
+        <div class="input-group">
+          <label>Password</label>
+          <input type="password" name="password" placeholder="Masukkan password (min 6 karakter)" required>
+        </div>
+
+        <div class="input-group">
+          <label>Konfirmasi Password</label>
+          <input type="password" name="password_confirm" placeholder="Ulangi password" required>
+        </div>
+
+        <button type="submit" class="btn-auth">Sign Up</button>
+      </form>
+
+      <div class="bottom-text bottom-text--sm">
+        Sudah punya akun?
+        <a href="login.html">Login sekarang</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- SIGNUP SECTION END -->
+
+
+<!-- JS -->
+<script src="main.js"></script>
+<script src="validation.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | JejakHijau</title>
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ICON -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+<!-- ADMIN NAVBAR -->
+<nav class="admin-navbar">
+  <a href="index.html" class="admin-logo">Jejak<span>Hijau</span></a>
+  <ul class="admin-menu">
+    <li><a href="admin-dashboard.html">Dashboard</a></li>
+    <li><a href="#campaigns-section">Campaign</a></li>
+    <li><a href="#help-section">Bantuan</a></li>
+  </ul>
+  <div class="admin-right">
+    <a href="admin-login.html">Logout</a>
+  </div>
+</nav>
+<!-- ADMIN NAVBAR END -->
+
+
+<!-- ADMIN HEADER -->
+<section class="admin-header">
+  <span>Admin Panel</span>
+  <h1>Dashboard Admin JejakHijau</h1>
+  <p>Kelola campaign dan bantuan dari pengguna</p>
+</section>
+<!-- ADMIN HEADER END -->
+
+
+<!-- MESSAGES -->
+<!-- Dipindahkan dari: style="max-width: 1100px; margin: 20px auto; padding: 15px 40px;" -->
+<!-- PHP: if (!empty($success)) -->
+<div class="admin-msg-wrapper" id="msg-success-wrapper" style="display:none;">
+  <!-- Dipindahkan dari: style="background-color: #eafaf1; border-left: 4px solid #27ae60; ..." -->
+  <div class="msg-success" id="admin-msg-success">
+    <!-- PHP: echo htmlspecialchars($success) -->
+    Operasi berhasil!
+  </div>
+</div>
+
+<!-- PHP: if (!empty($error)) -->
+<div class="admin-msg-wrapper" id="msg-error-wrapper" style="display:none;">
+  <!-- Dipindahkan dari: style="background-color: #ffebee; border-left: 4px solid #e74c3c; ..." -->
+  <div class="msg-error" id="admin-msg-error">
+    Terjadi kesalahan!
+  </div>
+</div>
+<!-- MESSAGES END -->
+
+
+<!-- ════════════════════════════════════════════════════
+     SECTION 1: VERIFIKASI CAMPAIGN (pending)
+     ════════════════════════════════════════════════════ -->
+<!-- Dipindahkan dari: style="padding-top: 40px;" -->
+<section class="admin-section admin-section--pt" id="campaigns-section">
+  <div class="section-title">
+    <!-- PHP: count($pending_campaigns) -->
+    <h2>📋 Verifikasi Campaign (2)</h2>
+  </div>
+
+  <!-- PHP: if (count($pending_campaigns) > 0) -->
+  <table class="admin-table">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Judul Campaign</th>
+        <th>Pembuat</th>
+        <th>Target Dana</th>
+        <th>Lokasi</th>
+        <th>Tanggal</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- PHP: foreach ($pending_campaigns as $campaign) -->
+      <tr>
+        <td>1</td>
+        <td>Reboisasi Hutan Aceh</td>
+        <td>Budi Santoso</td>
+        <td>Rp5.000.000</td>
+        <td>Aceh</td>
+        <td>10/06/2026</td>
+        <td>
+          <!-- Dipindahkan dari: style="display: inline;" -->
+          <form method="POST" class="form-inline">
+            <input type="hidden" name="campaign_id" value="1">
+            <input type="hidden" name="action" value="approve">
+            <button type="submit" class="btn-approve">✓ Setujui</button>
+          </form>
+          <form method="POST" class="form-inline">
+            <input type="hidden" name="campaign_id" value="1">
+            <input type="hidden" name="action" value="reject">
+            <button type="submit" class="btn-reject">✗ Tolak</button>
+          </form>
+          <form method="POST" class="form-inline">
+            <input type="hidden" name="campaign_id" value="1">
+            <input type="hidden" name="action" value="delete">
+            <button type="submit" class="btn-delete"
+                    onclick="return confirm('Apakah Anda yakin ingin menghapus campaign ini?')">
+              🗑 Hapus
+            </button>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Mangrove Sulawesi</td>
+        <td>Siti Rahayu</td>
+        <td>Rp3.000.000</td>
+        <td>Sulawesi Selatan</td>
+        <td>11/06/2026</td>
+        <td>
+          <form method="POST" class="form-inline">
+            <input type="hidden" name="campaign_id" value="2">
+            <input type="hidden" name="action" value="approve">
+            <button type="submit" class="btn-approve">✓ Setujui</button>
+          </form>
+          <form method="POST" class="form-inline">
+            <input type="hidden" name="campaign_id" value="2">
+            <input type="hidden" name="action" value="reject">
+            <button type="submit" class="btn-reject">✗ Tolak</button>
+          </form>
+          <form method="POST" class="form-inline">
+            <input type="hidden" name="campaign_id" value="2">
+            <input type="hidden" name="action" value="delete">
+            <button type="submit" class="btn-delete"
+                    onclick="return confirm('Apakah Anda yakin?')">
+              🗑 Hapus
+            </button>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- PHP: else — tidak ada campaign pending -->
+  <!-- Dipindahkan dari: style="padding: 40px; text-align: center; color: #999;" -->
+  <!--
+  <div class="admin-empty-state">
+    <p>Tidak ada campaign yang menunggu verifikasi</p>
+  </div>
+  -->
+
+</section>
+
+
+<!-- ════════════════════════════════════════════════════
+     SECTION 2: PERMINTAAN BANTUAN
+     ════════════════════════════════════════════════════ -->
+<!-- Dipindahkan dari: style="padding-top: 40px;" -->
+<section class="admin-section admin-section--pt" id="help-section">
+  <div class="section-title">
+    <!-- PHP: count($help_requests) -->
+    <h2>🆘 Permintaan Bantuan (3)</h2>
+  </div>
+
+  <!-- PHP: if (count($help_requests) > 0) -->
+  <table class="admin-table">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>Email</th>
+        <th>No. HP</th>
+        <th>Kategori</th>
+        <th>Pesan</th>
+        <th>Status</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- PHP: foreach ($help_requests as $help) -->
+
+      <!-- Contoh status: pending -->
+      <tr>
+        <td>1</td>
+        <td>Ahmad Fauzi</td>
+        <td>ahmad@email.com</td>
+        <td>08123456789</td>
+        <td>donasi</td>
+        <td>Bagaimana cara konfirmasi pembayaran...</td>
+        <td>
+          <!-- Dipindahkan dari: style="background-color: #fff3cd; color: #856404; padding: 5px 10px; border-radius: 5px; font-size: 12px; font-weight: 600;" -->
+          <span class="status-badge status-pending-badge">Pending</span>
+        </td>
+        <td>
+          <!-- Dipindahkan dari: style="display: inline;" -->
+          <form method="POST" class="form-inline">
+            <input type="hidden" name="help_id" value="1">
+            <input type="hidden" name="help_action" value="process">
+            <!-- Dipindahkan dari: style="font-size: 12px; padding: 8px 12px;" -->
+            <button type="submit" class="btn-approve btn-approve--sm">✓ Proses</button>
+          </form>
+        </td>
+      </tr>
+
+      <!-- Contoh status: processed -->
+      <tr>
+        <td>2</td>
+        <td>Dewi Kusuma</td>
+        <td>dewi@email.com</td>
+        <td>08198765432</td>
+        <td>campaign</td>
+        <td>Saya ingin mengajukan campaign baru...</td>
+        <td>
+          <!-- Dipindahkan dari: style="background-color: #d8f3dc; color: #2d6a4f; padding: 5px 10px; border-radius: 5px; font-size: 12px; font-weight: 600;" -->
+          <span class="status-badge status-processed">Processed</span>
+        </td>
+        <td>
+          <form method="POST" class="form-inline">
+            <input type="hidden" name="help_id" value="2">
+            <input type="hidden" name="help_action" value="pending">
+            <button type="submit" class="btn-approve btn-approve--sm">⟲ Pending</button>
+          </form>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <!-- PHP: else — tidak ada permintaan bantuan -->
+  <!-- Dipindahkan dari: style="padding: 40px; text-align: center; color: #999;" -->
+  <!--
+  <div class="admin-empty-state">
+    <p>Tidak ada permintaan bantuan</p>
+  </div>
+  -->
+
+</section>
+
+
+<!-- ════════════════════════════════════════════════════
+     SECTION 3: CAMPAIGN AKTIF (approved)
+     ════════════════════════════════════════════════════ -->
+<!-- Dipindahkan dari: style="padding-top: 40px;" -->
+<section class="admin-section admin-section--pt" id="approved-campaigns-section">
+  <div class="section-title">
+    <!-- PHP: count($approved_campaigns) -->
+    <h2>✓ Campaign Aktif (1)</h2>
+  </div>
+
+  <!-- PHP: if (count($approved_campaigns) > 0) -->
+  <table class="admin-table">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Judul Campaign</th>
+        <th>Pembuat</th>
+        <th>Dana Terkumpul</th>
+        <th>Status</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- PHP: foreach ($approved_campaigns as $index => $campaign) -->
+      <tr>
+        <td>1</td>
+        <td>Reboisasi Hutan Kalimantan</td>
+        <td>Joko Widodo</td>
+        <td>Rp6.500.000</td>
+        <td>
+          <!-- Dipindahkan dari: style="background-color: #d8f3dc; color: #2d6a4f; padding: 5px 10px; border-radius: 5px; font-size: 12px; font-weight: 600;" -->
+          <span class="status-badge status-active">Aktif</span>
+        </td>
+        <td>
+          <!-- Dipindahkan dari: style="display: inline;" -->
+          <form method="POST" class="form-inline">
+            <input type="hidden" name="campaign_id" value="3">
+            <input type="hidden" name="action" value="delete">
+            <button type="submit" class="btn-delete"
+                    onclick="return confirm('Apakah Anda yakin ingin menghapus campaign ini?')">
+              🗑 Hapus
+            </button>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- PHP: else -->
+  <!-- Dipindahkan dari: style="padding: 40px; text-align: center; color: #999;" -->
+  <!--
+  <p class="admin-empty-state">Belum ada campaign yang aktif.</p>
+  -->
+
+</section>
+
+
+<!-- FOOTER -->
+<!-- Dipindahkan dari: style="margin-top: 60px;" -->
+<footer class="footer footer--admin">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <h2>JejakHijau</h2>
+      <p>Langkah kecilmu, dampak besar bagi bumi 🌏</p>
+    </div>
+    <div class="footer-menu">
+      <h3>Menu</h3>
+      <a href="index.html">Beranda</a>
+      <a href="campaigns.html">Campaign</a>
+      <a href="bantuan.html">Bantuan</a>
+    </div>
+    <div class="footer-contact">
+      <h3>Kontak</h3>
+      <p>Email: jejakhijau@gmail.com</p>
+      <p>Instagram: @jejakhijau</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 JejakHijau. All Rights Reserved.</p>
+  </div>
+</footer>
+<!-- FOOTER END -->
+
+
+<!-- JS -->
+<script src="main.js"></script>
+
+</body>
+</html>

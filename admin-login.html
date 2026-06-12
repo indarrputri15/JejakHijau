@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | JejakHijau</title>
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ICON -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="navbar-logo">Jejak<span>Hijau</span></a>
+  <ul class="ul-navbar">
+    <li><a href="index.html#beranda">BERANDA</a></li>
+    <li><a href="index.html#dampak">DAMPAK</a></li>
+    <li><a href="index.html#tentang">TENTANG</a></li>
+  </ul>
+  <div class="navbar-extra">
+    <a href="admin-login.html" class="active">ADMIN</a>
+  </div>
+</nav>
+<!-- NAVBAR END -->
+
+
+<!-- ADMIN LOGIN SECTION -->
+<section class="login-section">
+  <div class="login-container">
+
+    <!-- LEFT -->
+    <div class="login-left">
+      <span>Admin Panel</span>
+      <h1>Login Admin JejakHijau 🌱</h1>
+      <p>
+        Kelola campaign, verifikasi donasi,
+        dan pantau sistem JejakHijau.
+      </p>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="login-right">
+      <h2>Login Admin</h2>
+
+      <!-- Pesan Error — dipindahkan dari inline style PHP -->
+      <div class="msg-error" id="admin-login-error" style="display:none;">
+        <!-- PHP: echo htmlspecialchars($error) -->
+        Pesan error dari server.
+      </div>
+
+      <form method="POST" action="admin-login.php">
+        <div class="input-group">
+          <label>Email Admin</label>
+          <input type="email" name="email"
+                 placeholder="Masukkan email admin" required>
+        </div>
+        <div class="input-group">
+          <label>Password</label>
+          <input type="password" name="password"
+                 placeholder="Masukkan password" required>
+        </div>
+        <button type="submit" class="btn-auth">Login</button>
+      </form>
+
+      <!-- Info kredensial demo
+           Dipindahkan dari:
+           style="margin-top: 20px; text-align: center; color: #3d5a47; font-size: 13px;"
+           dan <p style="margin-bottom: 10px;"> -->
+      <div class="bottom-text bottom-text--sm">
+        <p>Email: <strong>admin@jejakhijau.com</strong></p>
+        <p>Password: <strong>admin123</strong></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ADMIN LOGIN SECTION END -->
+
+
+<!-- JS -->
+<script src="main.js"></script>
+
+</body>
+</html>

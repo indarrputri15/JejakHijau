@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bantuan | JejakHijau</title>
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ICON -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="navbar-logo">Jejak<span>Hijau</span></a>
+
+  <div class="navbar-container">
+    <ul class="ul-navbar">
+      <li><a href="index.html#beranda">BERANDA</a></li>
+      <li><a href="index.html#dampak">DAMPAK</a></li>
+      <li><a href="index.html#tentang">TENTANG</a></li>
+      <li><a href="bantuan.html" class="active">BANTUAN</a></li>
+      <li><a href="campaigns.html">CAMPAIGN</a></li>
+    </ul>
+  </div>
+
+  <div class="navbar-extra">
+    <!-- Jika sudah login -->
+    <div class="profile-menu" id="profile-menu">
+      <button class="profile-btn" id="profile-btn">
+        <i data-feather="user"></i>
+      </button>
+      <div class="dropdown-profile" id="dropdown-profile">
+        <a href="profile.html">Profil Saya</a>
+        <a href="create-campaign.html">Buat Campaign</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+
+    <!-- Jika belum login -->
+    <!-- <a href="login.html" class="btn-masuk">MASUK</a> -->
+
+    <a href="#" id="menu-btn">
+      <i data-feather="menu"></i>
+    </a>
+  </div>
+</nav>
+<!-- NAVBAR END -->
+
+
+<!-- HEADER -->
+<section class="header-bantuan">
+  <span>Hubungi Kami</span>
+  <h1>Pusat Bantuan & Dukungan</h1>
+  <p>Jika Anda memiliki pertanyaan atau butuh bantuan, silakan kirimkan pesan kepada kami.</p>
+</section>
+<!-- HEADER END -->
+
+
+<!-- FORM SECTION -->
+<section class="form-section">
+  <!-- Dipindahkan dari: style="width: 900px;" → sudah default .form-container -->
+  <div class="form-container">
+
+    <!-- Pesan Error — dipindahkan dari inline style PHP -->
+    <div class="msg-error" id="bantuan-error" style="display:none;">
+      <!-- PHP: echo htmlspecialchars($error) -->
+      Pesan error dari server.
+    </div>
+
+    <!-- Pesan Sukses — dipindahkan dari inline style PHP -->
+    <div class="msg-success" id="bantuan-success" style="display:none;">
+      Permintaan bantuan Anda berhasil dikirim! Admin akan segera menghubungi Anda.
+    </div>
+
+    <h2>Form Permintaan Bantuan</h2>
+
+    <form method="POST" action="bantuan.php" id="form-bantuan">
+      <table class="form-table">
+        <tr>
+          <td>Nama Lengkap</td>
+          <td>
+            <input type="text" name="nama_lengkap" placeholder="Masukkan nama lengkap Anda" required>
+          </td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td>
+            <input type="email" name="email" placeholder="Masukkan email Anda" required>
+          </td>
+        </tr>
+        <tr>
+          <td>No. Handphone</td>
+          <td>
+            <input type="tel" name="no_hp" placeholder="Masukkan nomor handphone" required>
+          </td>
+        </tr>
+        <tr>
+          <td>Kategori Bantuan</td>
+          <td>
+            <select name="kategori" required>
+              <option value="">-- Pilih Kategori --</option>
+              <option value="donasi">Pertanyaan tentang Donasi</option>
+              <option value="campaign">Pertanyaan tentang Campaign</option>
+              <option value="lainnya">Lainnya</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Pesan</td>
+          <td>
+            <textarea name="pesan" rows="6" placeholder="Jelaskan pertanyaan atau masalah Anda secara detail..." required></textarea>
+          </td>
+        </tr>
+      </table>
+
+      <div class="btn-area">
+        <button type="submit" class="btn-kirim">Kirim Bantuan</button>
+      </div>
+    </form>
+
+  </div>
+</section>
+<!-- FORM SECTION END -->
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <h2>JejakHijau</h2>
+      <p>Langkah kecilmu, dampak besar bagi bumi 🌏</p>
+    </div>
+    <div class="footer-menu">
+      <h3>Menu</h3>
+      <a href="index.html">Beranda</a>
+      <a href="campaigns.html">Campaign</a>
+      <a href="bantuan.html">Bantuan</a>
+    </div>
+    <div class="footer-contact">
+      <h3>Kontak</h3>
+      <p>Email: jejakhijau@gmail.com</p>
+      <p>Instagram: @jejakhijau</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 JejakHijau. All Rights Reserved.</p>
+  </div>
+</footer>
+<!-- FOOTER END -->
+
+
+<!-- JS -->
+<script src="main.js"></script>
+<script src="validation.js"></script>
+
+</body>
+</html>

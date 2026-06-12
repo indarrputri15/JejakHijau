@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Donasi | JejakHijau</title>
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ICON -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="navbar-logo">Jejak<span>Hijau</span></a>
+  <ul class="ul-navbar">
+    <li><a href="index.html#beranda">BERANDA</a></li>
+    <li><a href="index.html#dampak">DAMPAK</a></li>
+    <li><a href="index.html#tentang">TENTANG</a></li>
+    <li><a href="bantuan.html">BANTUAN</a></li>
+    <li><a href="campaigns.html">CAMPAIGN</a></li>
+  </ul>
+  <div class="navbar-extra">
+    <div class="profile-menu" id="profile-menu">
+      <button class="profile-btn" id="profile-btn">
+        <i data-feather="user"></i>
+      </button>
+      <div class="dropdown-profile" id="dropdown-profile">
+        <a href="profile.html">Profil Saya</a>
+        <a href="create-campaign.html">Buat Campaign</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- NAVBAR END -->
+
+
+<!-- HEADER -->
+<section class="header-kontribusi">
+  <span>Form Donasi</span>
+  <h1>Donasi untuk Campaign 🌱</h1>
+  <p>Setiap Rp 10.000 = 1 pohon yang ditanam</p>
+</section>
+<!-- HEADER END -->
+
+
+<!-- FORM SECTION -->
+<!-- Dipindahkan dari: style="padding-bottom: 100px;" → sudah ada di .form-section -->
+<section class="form-section">
+  <!-- Dipindahkan dari: style="width: 700px;" -->
+  <div class="form-container form-container--md">
+
+    <!-- Pesan Error — dipindahkan dari inline style PHP -->
+    <div class="msg-error" id="donasi-error" style="display:none;">
+      Pesan error dari server.
+    </div>
+
+    <!-- Pesan Sukses — dipindahkan dari inline style PHP -->
+    <div class="msg-success" id="donasi-success" style="display:none;">
+      Donasi berhasil dikirim!
+    </div>
+
+    <h2>Informasi Campaign</h2>
+    <table class="form-table">
+      <tr>
+        <td>Judul Campaign</td>
+        <!-- PHP: echo htmlspecialchars($campaign['judul_campaign']) -->
+        <td>Reboisasi Hutan Kalimantan</td>
+      </tr>
+      <tr>
+        <td>Lokasi</td>
+        <!-- PHP: echo htmlspecialchars($campaign['lokasi']) -->
+        <td>Kalimantan Tengah</td>
+      </tr>
+      <tr>
+        <td>Dana Terkumpul</td>
+        <!-- PHP: Rp{number_format($campaign['dana_terkumpul'])} -->
+        <td>Rp6.500.000</td>
+      </tr>
+    </table>
+
+    <!-- Info Rekening -->
+    <div class="rekening-info">
+      <strong>Silakan transfer ke rekening berikut:</strong><br><br>
+      Bank BCA<br>
+      No. Rekening: <strong>1234567890</strong><br>
+      Atas Nama: <strong>Jejak Hijau</strong><br><br>
+      Setelah melakukan transfer, unggah bukti transfer pada form di bawah ini.
+    </div>
+
+    <!-- PHP: action="donation-form.php?campaign_id={$campaign_id}" -->
+    <form method="POST" action="donation-form.php" id="form-donasi" enctype="multipart/form-data">
+      <table class="form-table">
+        <tr>
+          <td>Nominal Donasi</td>
+          <td>
+            <input type="number" name="nominal" id="nominal"
+                   placeholder="Minimal 10.000" min="10000" step="1000" required>
+
+            <!-- Dipindahkan dari: style="background-color: #edf7ef; padding: 12px; border-radius: 8px; margin-top: 10px; border-left: 4px solid #2d6a4f;" -->
+            <div class="estimasi-note">
+              🌱 <strong>Estimasi:</strong> <span id="estimasi-pohon">0</span> pohon akan ditanam
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Bukti Transfer</td>
+          <td>
+            <input type="file" name="bukti_transfer" id="bukti_transfer"
+                   accept=".jpg,.jpeg,.png,image/jpeg,image/png" required>
+            <small class="upload-info">Format yang diperbolehkan: JPG, JPEG, PNG</small>
+          </td>
+        </tr>
+        <tr>
+          <td>Pesan Dukungan</td>
+          <td>
+            <textarea name="pesan" id="pesan" rows="4"
+                      placeholder="Pesan dukunganmu (opsional)..."></textarea>
+          </td>
+        </tr>
+      </table>
+
+      <div class="btn-area">
+        <!-- Dipindahkan dari: style="background-color: #999;" -->
+        <a href="campaign-detail.html" class="btn-kirim btn-kirim--secondary">Kembali</a>
+        <button type="submit" class="btn-kirim">Kirim Donasi</button>
+      </div>
+    </form>
+
+  </div>
+</section>
+<!-- FORM SECTION END -->
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <h2>JejakHijau</h2>
+      <p>Langkah kecilmu, dampak besar bagi bumi 🌏</p>
+    </div>
+    <div class="footer-menu">
+      <h3>Menu</h3>
+      <a href="index.html">Beranda</a>
+      <a href="campaigns.html">Campaign</a>
+      <a href="bantuan.html">Bantuan</a>
+    </div>
+    <div class="footer-contact">
+      <h3>Kontak</h3>
+      <p>Email: jejakhijau@gmail.com</p>
+      <p>Instagram: @jejakhijau</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 JejakHijau. All Rights Reserved.</p>
+  </div>
+</footer>
+<!-- FOOTER END -->
+
+
+<!-- JS -->
+<script src="main.js"></script>
+<script src="validation.js"></script>
+<script>
+  // Update estimasi pohon saat nominal berubah
+  document.getElementById('nominal').addEventListener('input', updateEstimasi);
+</script>
+
+</body>
+</html>

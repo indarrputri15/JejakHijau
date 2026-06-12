@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campaign | JejakHijau</title>
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ICON -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="navbar-logo">Jejak<span>Hijau</span></a>
+  <ul class="ul-navbar">
+    <li><a href="index.html#beranda">BERANDA</a></li>
+    <li><a href="index.html#dampak">DAMPAK</a></li>
+    <li><a href="index.html#tentang">TENTANG</a></li>
+    <li><a href="bantuan.html">BANTUAN</a></li>
+    <li><a href="campaigns.html" class="active">CAMPAIGN</a></li>
+  </ul>
+  <div class="navbar-extra">
+    <!-- Jika sudah login -->
+    <div class="profile-menu" id="profile-menu">
+      <button class="profile-btn" id="profile-btn">
+        <i data-feather="user"></i>
+      </button>
+      <div class="dropdown-profile" id="dropdown-profile">
+        <a href="profile.html">Profil Saya</a>
+        <a href="create-campaign.html">Buat Campaign</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+    <!-- Jika belum login: <a href="login.html">MASUK</a> -->
+  </div>
+</nav>
+<!-- NAVBAR END -->
+
+
+<!-- HEADER -->
+<section class="header-kontribusi">
+  <span>Halaman Campaign</span>
+  <h1>Daftar Campaign yang Sedang Berlangsung 🌱</h1>
+  <p>Pilih campaign yang ingin Anda bantu dengan donasi Anda.</p>
+</section>
+<!-- HEADER END -->
+
+
+<!-- CAMPAIGNS LIST -->
+<section class="panel-section">
+  <div class="campaign-container">
+
+    <!-- CAMPAIGN CARD — diulang oleh PHP foreach -->
+    <div class="campaign-card">
+      <div class="campaign-image">
+        <img src="assets/nanam.jpeg" alt="Campaign">
+      </div>
+      <div class="campaign-content">
+        <span>Campaign Aktif</span>
+        <h3>Reboisasi Hutan Kalimantan</h3>
+        <p>Membantu penghijauan hutan Kalimantan yang semakin berkurang akibat deforestasi...</p>
+        <div class="campaign-progress">
+          <div class="progress-bar">
+            <!-- PHP: style="width: {$percentage}%" -->
+            <div class="progress-fill" style="width: 65%"></div>
+          </div>
+          <small>Rp6.500.000 / Rp10.000.000 (65%)</small>
+        </div>
+        <a href="campaign-detail.html" class="btn detail-btn">Lihat Detail</a>
+      </div>
+    </div>
+
+    <div class="campaign-card">
+      <div class="campaign-image">
+        <img src="assets/nanam.jpeg" alt="Campaign">
+      </div>
+      <div class="campaign-content">
+        <span>Campaign Aktif</span>
+        <h3>Penanaman Mangrove Sulawesi</h3>
+        <p>Program penyelamatan ekosistem pesisir melalui penanaman pohon mangrove...</p>
+        <div class="campaign-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 40%"></div>
+          </div>
+          <small>Rp2.000.000 / Rp5.000.000 (40%)</small>
+        </div>
+        <a href="campaign-detail.html" class="btn detail-btn">Lihat Detail</a>
+      </div>
+    </div>
+
+    <!-- EMPTY STATE — dipindahkan dari inline style -->
+    <!-- PHP: if (count($campaigns) === 0) -->
+    <!--
+    <div class="campaigns-empty">
+      <p>Belum ada campaign yang aktif saat ini.</p>
+    </div>
+    -->
+
+    <!-- CAMPAIGN CREATE BOX -->
+    <!-- Dipindahkan dari: style="background: linear-gradient(...); border: 2px dashed #2d6a4f;" -->
+    <div class="campaign-card campaign-create-box">
+      <!-- Dipindahkan dari: style="text-align: center; padding: 30px;" -->
+      <div class="campaign-create-inner">
+        <!-- Dipindahkan dari: style="color: #1a3728; margin-bottom: 15px;" -->
+        <h3>Miliki Campaign Anda Sendiri</h3>
+        <!-- Dipindahkan dari: style="color: #6b8f76; margin-bottom: 20px;" -->
+        <p>
+          Apakah Anda memiliki lokasi yang butuh penghijauan?
+          Kami bisa membantu merealisasikannya bersama komunitas.
+        </p>
+        <!-- PHP: if (isset($_SESSION['user_id'])) -->
+        <a href="create-campaign.html" class="btn-primary">Ajukan Campaign</a>
+        <!-- Else: <a href="login.html" class="btn-primary">Login untuk Membuat Campaign</a> -->
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- CAMPAIGNS LIST END -->
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <h2>JejakHijau</h2>
+      <p>Langkah kecilmu, dampak besar bagi bumi 🌏</p>
+    </div>
+    <div class="footer-menu">
+      <h3>Menu</h3>
+      <a href="index.html">Beranda</a>
+      <a href="campaigns.html">Campaign</a>
+      <a href="bantuan.html">Bantuan</a>
+    </div>
+    <div class="footer-contact">
+      <h3>Kontak</h3>
+      <p>Email: jejakhijau@gmail.com</p>
+      <p>Instagram: @jejakhijau</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 JejakHijau. All Rights Reserved.</p>
+  </div>
+</footer>
+<!-- FOOTER END -->
+
+
+<!-- JS -->
+<script src="main.js"></script>
+
+</body>
+</html>

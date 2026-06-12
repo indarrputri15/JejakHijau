@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | JejakHijau</title>
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ICON -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="navbar-logo">Jejak<span>Hijau</span></a>
+</nav>
+<!-- NAVBAR END -->
+
+
+<!-- LOGIN SECTION -->
+<section class="login-section">
+  <div class="login-container">
+
+    <!-- LEFT -->
+    <div class="login-left">
+      <span>Selamat Datang</span>
+      <h1>Login Ke JejakHijau 🌱</h1>
+      <p>
+        Masuk untuk mulai berdonasi,
+        membuat campaign,
+        atau mengelola sistem.
+      </p>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="login-right">
+      <h2>Login Account</h2>
+
+      <!-- Pesan Error — dipindahkan dari inline style PHP -->
+      <!-- PHP: if (!empty($error)) -->
+      <div class="msg-error" id="login-error" style="display:none;">
+        <!-- PHP: echo htmlspecialchars($error) -->
+        Pesan error dari server akan muncul di sini.
+      </div>
+
+      <!-- Pesan Sukses — dipindahkan dari inline style PHP -->
+      <!-- PHP: if (!empty($success)) -->
+      <div class="msg-success" id="login-success" style="display:none;">
+        Login berhasil! Mengalihkan...
+      </div>
+
+      <!-- <form method="POST" action="login.php" id="form-login"> -->
+       <form id="form-login">
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="Masukkan email" required>
+        </div>
+        <div class="input-group">
+          <label>Password</label>
+          <input type="password" name="password" placeholder="Masukkan password" required>
+        </div>
+        <button type="submit" class="btn-auth">Login</button>
+      </form>
+
+      <!-- Dipindahkan dari: style="margin-top: 20px; text-align: center; color: #3d5a47;" -->
+      <div class="bottom-text">Belum punya akun?<a href="signup.html">Daftar sekarang</a></div>
+    </div>
+
+  </div>
+</section>
+<!-- LOGIN SECTION END -->
+
+
+<!-- JS -->
+<script src="main.js"></script>
+<script src="validation.js"></script>
+
+</body>
+</html>
