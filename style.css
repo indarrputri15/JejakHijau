@@ -1560,6 +1560,26 @@ input, select, textarea, button {
   text-align: center;
 }
 
+.password-section {
+  margin-top: 35px;
+  padding-top: 35px;
+  border-top: 1px solid #d8e7dc;
+}
+
+.password-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a3728;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.password-section p {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
 
 /* ============================================================
    16. HALAMAN: admin-login.php
