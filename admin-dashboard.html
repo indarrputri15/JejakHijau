@@ -21,11 +21,11 @@
 
 <!-- ADMIN NAVBAR -->
 <nav class="admin-navbar">
-  <a href="index.html" class="admin-logo">Jejak<span>Hijau</span></a>
-  <ul class="admin-menu">
-    <li><a href="admin-dashboard.html">Dashboard</a></li>
-    <li><a href="#campaigns-section">Campaign</a></li>
-    <li><a href="#help-section">Bantuan</a></li>
+  <a href="index.html" class="navbar-logo">Jejak<span>Hijau</span></a>
+  <ul class="ul-navbar">
+    <li><a href="#users-section">KELOLA USER</a></li>
+    <li><a href="#campaigns-section">VERIFIKASI CAMPAIGN</a></li>
+    <li><a href="#approved-campaigns-section">CAMPAIGN AKTIF</a></li>
   </ul>
   <div class="admin-right">
     <a href="admin-login.html">Logout</a>
@@ -38,7 +38,7 @@
 <section class="admin-header">
   <span>Admin Panel</span>
   <h1>Dashboard Admin JejakHijau</h1>
-  <p>Kelola campaign dan bantuan dari pengguna</p>
+  <p>Kelola campaign dan user dari pengguna</p>
 </section>
 <!-- ADMIN HEADER END -->
 
@@ -61,16 +61,89 @@
 <!-- MESSAGES END -->
 
 
-<!-- ════════════════════════════════════════════════════
-     SECTION 1: VERIFIKASI CAMPAIGN (pending)
-     ════════════════════════════════════════════════════ -->
-<section class="admin-section admin-section--pt" id="campaigns-section">
+<!-- USERS LIST TABLE SECTION -->
+<section class="admin-section admin-section--pt" id="users-section">
   <div class="section-title">
-    <!-- PHP: count($pending_campaigns) -->
-    <h2>📋 Verifikasi Campaign (2)</h2>
+    <!-- PHP: count($all_users) -->
+    <h2>Daftar User</h2>
   </div>
 
-  <!-- PHP: if (count($pending_campaigns) > 0) -->
+  <!-- PHP: if (count($all_users) > 0) -->
+  <div class="table-responsive">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Email</th>
+          <th>No. HP</th>
+          <th>Provinsi</th>
+          <th>Kampanye</th>
+          <th>Total Donasi</th>
+          <th>Terdaftar</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- PHP: foreach ($all_users as $index => $user) -->
+        
+        <!-- User 1 -->
+        <tr class="user-row" data-user-id="1">
+          <td>1</td>
+          <td class="user-name">Budi Santoso</td>
+          <td>budi@email.com</td>
+          <td>08123456789</td>
+          <td>Jawa Barat</td>
+          <td class="text-center">
+            <span class="badge badge-primary">3</span>
+          </td>
+          <td class="text-center">
+            <strong>Rp15.500.000</strong>
+          </td>
+          <td>05/03/2026</td>
+          <td>
+            <a href="users-detail.html" class="btn-detail btn-detail--sm">Lihat Detail</a>
+          </td>
+        </tr>
+
+        <!-- User 2 -->
+        <tr class="user-row" data-user-id="2">
+          <td>2</td>
+          <td class="user-name">Siti Rahayu</td>
+          <td>siti@email.com</td>
+          <td>08198765432</td>
+          <td>Sulawesi Selatan</td>
+          <td class="text-center">
+            <span class="badge badge-primary">2</span>
+          </td>
+          <td class="text-center">
+            <strong>Rp8.250.000</strong>
+          </td>
+          <td>10/02/2026</td>
+          <td>
+            <a href="users-detail.html" class="btn-detail btn-detail--sm">Lihat Detail</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PHP: else — tidak ada user -->
+  <!--
+  <div class="admin-empty-state">
+    <p>Tidak ada user terdaftar</p>
+  </div>
+  -->
+
+</section>
+<!-- USERS LIST TABLE END -->
+
+
+<section class="admin-section admin-section--pt" id="campaigns-section">
+  <div class="section-title">
+    <h2>Verifikasi Campaign</h2>
+  </div>
+
   <table class="admin-table">
     <thead>
       <tr>
@@ -84,7 +157,6 @@
       </tr>
     </thead>
     <tbody>
-      <!-- PHP: foreach ($pending_campaigns as $campaign) -->
       <tr>
         <td>1</td>
         <td>Reboisasi Hutan Aceh</td>
@@ -93,7 +165,7 @@
         <td>Aceh</td>
         <td>10/06/2026</td>
         <td>
-          <!-- Dipindahkan dari: style="display: inline;" -->
+
           <form method="POST" class="form-inline">
             <input type="hidden" name="campaign_id" value="1">
             <input type="hidden" name="action" value="approve">
@@ -140,107 +212,13 @@
     </tbody>
   </table>
 
-  <!-- PHP: else — tidak ada campaign pending -->
-  <!--
-  <div class="admin-empty-state">
-    <p>Tidak ada campaign yang menunggu verifikasi</p>
-  </div>
-  -->
-
 </section>
 
 
-<!-- ════════════════════════════════════════════════════
-     SECTION 2: PERMINTAAN BANTUAN
-     ════════════════════════════════════════════════════ -->
-<section class="admin-section admin-section--pt" id="help-section">
-  <div class="section-title">
-    <!-- PHP: count($help_requests) -->
-    <h2>🆘 Permintaan Bantuan (3)</h2>
-  </div>
-
-  <!-- PHP: if (count($help_requests) > 0) -->
-  <table class="admin-table">
-    <thead>
-      <tr>
-        <th>No</th>
-        <th>Nama</th>
-        <th>Email</th>
-        <th>No. HP</th>
-        <th>Kategori</th>
-        <th>Pesan</th>
-        <th>Status</th>
-        <th>Aksi</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- PHP: foreach ($help_requests as $help) -->
-
-      <!-- Contoh status: pending -->
-      <tr>
-        <td>1</td>
-        <td>Ahmad Fauzi</td>
-        <td>ahmad@email.com</td>
-        <td>08123456789</td>
-        <td>donasi</td>
-        <td>Bagaimana cara konfirmasi pembayaran...</td>
-        <td>
-          
-          <span class="status-badge status-pending-badge">Pending</span>
-        </td>
-        <td>
-
-          <form method="POST" class="form-inline">
-            <input type="hidden" name="help_id" value="1">
-            <input type="hidden" name="help_action" value="process">
-            <!-- Dipindahkan dari: style="font-size: 12px; padding: 8px 12px;" -->
-            <button type="submit" class="btn-approve btn-approve--sm">Tandai Selesai</button>
-          </form>
-        </td>
-      </tr>
-
-      <!-- Contoh status: processed -->
-      <tr>
-        <td>2</td>
-        <td>Dewi Kusuma</td>
-        <td>dewi@email.com</td>
-        <td>08198765432</td>
-        <td>campaign</td>
-        <td>Saya ingin mengajukan campaign baru...</td>
-        <td>
-
-          <span class="status-badge status-processed">Processed</span>
-        </td>
-        <td>
-          <form method="POST" class="form-inline">
-            <input type="hidden" name="help_id" value="2">
-            <input type="hidden" name="help_action" value="pending">
-            <button type="submit" class="btn-approve btn-approve--sm">Pending</button>
-          </form>
-        </td>
-      </tr>
-
-    </tbody>
-  </table>
-
-  <!-- PHP: else — tidak ada permintaan bantuan -->
-  <!--
-  <div class="admin-empty-state">
-    <p>Tidak ada permintaan bantuan</p>
-  </div>
-  -->
-
-</section>
-
-
-<!-- ════════════════════════════════════════════════════
-     SECTION 3: CAMPAIGN AKTIF (approved)
-     ════════════════════════════════════════════════════ -->
-<!-- Dipindahkan dari: style="padding-top: 40px;" -->
 <section class="admin-section admin-section--pt" id="approved-campaigns-section">
   <div class="section-title">
     <!-- PHP: count($approved_campaigns) -->
-    <h2>✓ Campaign Aktif (1)</h2>
+    <h2>Campaign Aktif</h2>
   </div>
 
   <!-- PHP: if (count($approved_campaigns) > 0) -->
@@ -260,7 +238,7 @@
       <tr>
         <td>1</td>
         <td>Reboisasi Hutan Kalimantan</td>
-        <td>Joko Widodo</td>
+        <td>Joko Wijaya</td>
         <td>Rp6.500.000</td>
         <td>
           <!-- Dipindahkan dari: style="background-color: #d8f3dc; color: #2d6a4f; padding: 5px 10px; border-radius: 5px; font-size: 12px; font-weight: 600;" -->
@@ -278,39 +256,7 @@
       </tr>
     </tbody>
   </table>
-
-  <!-- PHP: else -->
-  <!--
-  <p class="admin-empty-state">Belum ada campaign yang aktif.</p>
-  -->
-
 </section>
-
-
-<!-- FOOTER -->
-<footer class="footer footer--admin">
-  <div class="footer-container">
-    <div class="footer-logo">
-      <h2>JejakHijau</h2>
-      <p>Langkah kecilmu, dampak besar bagi bumi 🌏</p>
-    </div>
-    <div class="footer-menu">
-      <h3>Menu</h3>
-      <a href="index.html">Beranda</a>
-      <a href="campaigns.html">Campaign</a>
-      <a href="bantuan.html">Bantuan</a>
-    </div>
-    <div class="footer-contact">
-      <h3>Kontak</h3>
-      <p>Email: jejakhijau@gmail.com</p>
-      <p>Instagram: @jejakhijau</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 JejakHijau. All Rights Reserved.</p>
-  </div>
-</footer>
-<!-- FOOTER END -->
 
 
 <!-- JS -->

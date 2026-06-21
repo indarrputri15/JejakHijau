@@ -8,7 +8,6 @@
    6. Komponen: Form Table
    7. Komponen: Profile Dropdown
    8. Halaman: index.php    (Hero, Dampak, Tentang)
-   9. Halaman: bantuan.php  (Header, Form Bantuan)
    10. Halaman: campaigns.php / kontribusi (Header, Campaign Card)
    11. Halaman: campaign-detail.php     
    12. Halaman: login.php & signup.php
@@ -202,14 +201,13 @@ input, select, textarea, button {
 
 /* ============================================================
    4. KOMPONEN: ALERT / MESSAGE BOX
-   Dipakai di: login.php, signup.php, bantuan.php,
+   Dipakai di: login.php, signup.php,
                campaign-detail.php, donation-form.php,
                create-campaign.php, profile.php,
                admin-login.php, admin-dashboard.php
    Dipindahkan dari: style="background-color: #ffebee; ..."
    ============================================================ */
 
-/* Pesan Error — dipindahkan dari inline style di semua halaman */
 .msg-error {
   background-color: #ffebee;
   border-left: 4px solid #e74c3c;
@@ -486,7 +484,7 @@ input, select, textarea, button {
 
 /* ============================================================
    6. KOMPONEN: FORM TABLE
-   Dipakai di: bantuan.php, donation-form.php,
+   Dipakai di: donation-form.php,
                create-campaign.php, profile.php
    ============================================================ */
 
@@ -502,9 +500,6 @@ input, select, textarea, button {
   border-radius: 20px;
   border: 1px solid #d8e7dc;
 }
-
-/* [bantuan.php — form container lebih lebar, sudah default 900px] */
-/* tidak perlu class khusus, sudah sama dengan .form-container */
 
 /* [donation-form.php, create-campaign.php, profile.php] */
 .form-container--md {
@@ -632,7 +627,7 @@ input, select, textarea, button {
 
 /* ============================================================
    7. KOMPONEN: PROFILE DROPDOWN (NAVBAR)
-   Dipakai di: index.php, bantuan.php, campaigns.php,
+   Dipakai di: index.php, campaigns.php,
                campaign-detail.php, donation-form.php,
                create-campaign.php, profile.php
    ============================================================ */
@@ -871,45 +866,12 @@ input, select, textarea, button {
     font-size: 0.95rem;
 }
 
-
-/* ============================================================
-   9. HALAMAN: bantuan.php
-   Seksi: Header, Form Bantuan
-   ============================================================ */
-
-/* --- Header Bantuan --- */
+/* tandain  */
 .header-bantuan {
   padding-top: 140px;
   padding-bottom: 70px;
   text-align: center;
 }
-
-.header-bantuan span {
-  display: inline-block;
-  background-color: #d8f3dc;
-  color: #2d6a4f;
-  padding: 6px 16px;
-  border-radius: 30px;
-  font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.header-bantuan h1 {
-  font-size: 52px;
-  color: #1a3728;
-  margin-bottom: 20px;
-  font-family: 'Playfair Display', serif;
-}
-
-.header-bantuan p {
-  width: 650px;
-  margin: auto;
-  font-size: 15px;
-  line-height: 1.8;
-  color: #6b8f76;
-}
-
 
 /* ============================================================
    10. HALAMAN: campaigns.php / kontribusi
@@ -1117,18 +1079,6 @@ input, select, textarea, button {
   color: #2d6a4f;
 }
 
-/* [admin-dashboard.php — status bantuan "processed"] */
-.status-processed {
-  background-color: #d8f3dc;
-  color: #2d6a4f;
-}
-
-/* [admin-dashboard.php — status bantuan "pending"] */
-.status-pending-badge {
-  background-color: #fff3cd;
-  color: #856404;
-}
-
 /* Tab section */
 .tab-section {
   padding-bottom: 60px;
@@ -1183,7 +1133,6 @@ input, select, textarea, button {
 /* ============================================================
    11. HALAMAN: campaign-detail.php
    Seksi: Cover Image, Info Cards, Lokasi, Tombol Donasi
-   Hampir semua dari inline style — dipindahkan ke sini
    ============================================================ */
 
 /* [campaign-detail.php — section gambar cover] */
@@ -1609,17 +1558,6 @@ input, select, textarea, button {
   z-index: 999;
 }
 
-.admin-logo {
-  font-size: 24px;
-  font-weight: 700;
-  color: #1a3728;
-  font-family: 'Playfair Display', serif;
-}
-
-.admin-logo span {
-  color: #2d6a4f;
-}
-
 .admin-menu {
   display: flex;
   gap: 30px;
@@ -1721,48 +1659,390 @@ input, select, textarea, button {
   color: #3d5a47;
 }
 
-/* [admin-dashboard.php — form inline di dalam tabel (tombol aksi)] */
+/* admin-dashboard.php - form inline di dalam tabel (tombol aksi) */
 .form-inline {
   display: inline;
 }
 
-/* [admin-dashboard.php — empty state tabel]*/
+/* admin-dashboard.php — empty state tabel*/
 .admin-empty-state {
   padding: 40px;
   text-align: center;
   color: #999;
 }
 
-
 /* ============================================================
-   18. RESPONSIVE
-   (diaktifkan kalo jadi dipake)
+   18. KELOLA USER PAGE (admin-users.html)
    ============================================================ */
 
-/* Tablet */
-/* @media (max-width: 768px) {
-  .navbar { padding: 0 20px; }
-  .ul-navbar { display: none; }
-  #hamburger-menu, #menu-btn { display: block; }
-  .ul-navbar.active { display: flex; flex-direction: column; ... }
-  .hero { flex-direction: column; text-align: center; }
-  .hero-img, .hero-text { width: 100%; }
-  .tentang { flex-direction: column; }
-  .tentang-img, .tentang-text { width: 100%; }
-  .footer-container { flex-direction: column; gap: 30px; width: 100%; padding: 0 20px; }
-  .login-container { flex-direction: column; width: 100%; }
-  .login-left, .login-right { width: 100%; }
-  .login-right--lg { width: 100%; max-height: none; }
-  .form-container, .form-container--md { width: 90%; }
-  .campaign-container { width: 100%; grid-template-columns: 1fr; }
-  .header-bantuan p, .header-kontribusi p, .admin-header p { width: 100%; padding: 0 20px; }
-  .admin-section { width: 100%; padding: 0 20px; }
-  .campaign-detail-inner { padding: 0 20px; }
-} */
+/* --- Search & Filter Container --- */
+.search-filter-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  align-items: center;
+}
 
-/* Mobile */
-/* @media (max-width: 450px) {
-  .hero-text h1 { font-size: 36px; }
-  .header-bantuan h1, .header-kontribusi h1 { font-size: 36px; }
-  .dampak-container { flex-direction: column; align-items: center; }
-} */
+.search-box {
+  flex: 1;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 40px 12px 15px;
+  border: 1px solid #d8e7dc;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #40916c;
+  box-shadow: 0 0 0 3px rgba(64, 145, 108, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #95b8a1;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.filter-box {
+  min-width: 200px;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #d8e7dc;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #40916c;
+  box-shadow: 0 0 0 3px rgba(64, 145, 108, 0.1);
+}
+
+
+/* --- Table Responsive Wrapper --- */
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.user-row {
+  transition: background-color 0.2s ease;
+}
+
+.user-row:hover {
+  background-color: #f5f9f7;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #1a3728;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Badge untuk jumlah campaign */
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-primary {
+  background-color: #d8f3dc;
+  color: #2d6a4f;
+}
+
+.badge-secondary {
+  background-color: #f0f3f1;
+  color: #52796f;
+}
+
+
+/* --- Pagination --- */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.pagination-btn {
+  padding: 10px 16px;
+  border: 1px solid #d8e7dc;
+  background-color: white;
+  color: #40916c;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: #40916c;
+  color: white;
+  border-color: #40916c;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  font-size: 13px;
+  color: #6b8f76;
+  min-width: 120px;
+  text-align: center;
+}
+
+
+/* ============================================================
+   19. USER DETAIL PAGE (admin-user-detail.html)
+   ============================================================ */
+
+/* --- Back Button --- */
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  color: #40916c;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid #d8e7dc;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.btn-back:hover {
+  background-color: #f0f3f1;
+  border-color: #40916c;
+}
+
+
+/* ---------- USER DETAIL CARD ---------- */
+
+.user-detail-card{
+    background:#fff;
+    border:1px solid #d8e7dc;
+    border-radius:12px;
+    padding:32px 36px;
+    box-shadow:0 2px 6px rgba(0,0,0,.05);
+}
+
+.user-detail-name{
+    font-family:'Playfair Display', serif;
+    font-size:32px;
+    color:#1a3728;
+    margin-bottom:24px;
+}
+
+.user-detail-card .admin-table{
+    width:100%;
+    border-collapse:collapse;
+    background:transparent;
+}
+
+.user-detail-card .admin-table tr{
+    border-bottom:1px solid #edf2ee;
+}
+
+.user-detail-card .admin-table tr:last-child{
+    border-bottom:none;
+}
+
+.user-detail-card .admin-table th{
+    width:180px;
+    padding:18px 0;
+    text-align:left;
+    font-size:15px;
+    font-weight:600;
+    color:#52796f;
+    background:none;
+    vertical-align:top;
+}
+
+.user-detail-card .admin-table td{
+    padding:18px 0;
+    font-size:15px;
+    color:#1a3728;
+    background:none;
+    line-height:1.7;
+}
+
+/* --- Campaign Cards (Admin View) --- */
+.user-campaigns-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.campaign-card--admin {
+  background: white;
+  border: 1px solid #d8e7dc;
+  border-radius: 12px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.campaign-card--admin:hover {
+  border-color: #40916c;
+  box-shadow: 0 4px 12px rgba(64, 145, 108, 0.1);
+}
+
+.campaign-header-admin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eef3ef;
+}
+
+.campaign-header-admin h3 {
+  font-size: 18px;
+  color: #1a3728;
+  margin: 0;
+  flex: 1;
+}
+
+.campaign-details-admin {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.campaign-detail-item {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  background-color: #f9fdfb;
+  border-radius: 8px;
+}
+
+.campaign-detail-item strong {
+  font-size: 12px;
+  color: #52796f;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.campaign-detail-item span {
+  font-size: 15px;
+  color: #1a3728;
+  font-weight: 600;
+}
+
+.campaign-progress {
+  margin-top: 15px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #eef3ef;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #40916c 0%, #2d6a4f 100%);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.campaign-progress small {
+  font-size: 12px;
+  color: #52796f;
+}
+
+
+/* --- Donations Table --- */
+.admin-table--donations tbody tr {
+  border-bottom: 1px solid #eef3ef;
+}
+
+.admin-table--donations tbody tr:hover {
+  background-color: #f9fdfb;
+}
+
+.admin-table--donations em {
+  color: #52796f;
+  font-style: italic;
+  font-size: 13px;
+}
+
+
+/* --- Action Buttons --- */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-action {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-action--warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.btn-action--warning:hover {
+  background-color: #ffe69c;
+  border-color: #ffd675;
+}
+
+.btn-action--danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.btn-action--danger:hover {
+  background-color: #f5c2c7;
+  border-color: #f1b0b7;
+}
+
+
+
