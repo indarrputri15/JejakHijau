@@ -1,5 +1,10 @@
-<!DOCTYPE html>
-<html lang="id">
+<?php
+// index.php
+session_start();
+?>
+
+<!DOCTYPE php>
+<php lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +26,7 @@
 
 <!-- NAVBAR -->
 <nav class="navbar">
-  <a href="index.html" class="navbar-logo">
+  <a href="index.php" class="navbar-logo">
     Jejak<span>Hijau</span>
   </a>
 
@@ -29,24 +34,26 @@
     <li><a href="#beranda">BERANDA</a></li>
     <li><a href="#dampak">DAMPAK</a></li>
     <li><a href="#tentang">TENTANG</a></li>
-    <li><a href="campaigns.html">CAMPAIGN</a></li>
+    <li><a href="campaigns.php">CAMPAIGN</a></li>
   </ul>
 
   <div class="navbar-extra">
-    <!-- Jika user sudah login (PHP: isset($_SESSION['user_id'])) -->
+    <?php if (isset($_SESSION['user_id'])): ?>
+    <!-- Jika user sudah login -->
     <div class="profile-menu" id="profile-menu">
       <button class="profile-btn" id="profile-btn">
         <i data-feather="user"></i>
       </button>
       <div class="dropdown-profile" id="dropdown-profile">
-        <a href="profile.html">Profil Saya</a>
-        <a href="create-campaign.html">Buat Campaign</a>
+        <a href="profile.php">Profil Saya</a>
+        <a href="create-campaign.php">Buat Campaign</a>
         <a href="#">Logout</a>
       </div>
     </div>
 
     <!-- Jika belum login: tampilkan link masuk -->
-    <!-- <a href="login.html">MASUK</a> -->
+    <a href="login.php">MASUK</a>
+    <?php endif; ?>
 
     <a href="#" id="hamburger-menu">
       <i data-feather="menu"></i>
@@ -63,7 +70,7 @@
     <span>Campaign Aktif</span>
     <h1>Bergabung dalam Aksi Hijau untuk Masa Depan 🌳</h1>
     <p>Langkah kecilmu hari ini dapat memberikan dampak besar bagi bumi di masa depan.</p>
-    <a href="campaigns.html" class="btn-primary">Ikut Sekarang</a>
+    <a href="campaigns.php" class="btn-primary">Ikut Sekarang</a>
   </article>
 </section>
 <!-- HERO END -->
@@ -148,7 +155,7 @@
         </div>
       </div>
 
-      <a href="campaigns.html" class="btn-primary">
+      <a href="campaigns.php" class="btn-primary">
         Mulai Kontribusi
       </a>
     </div>
@@ -167,8 +174,8 @@
     </div>
     <div class="footer-menu">
       <h3>Menu</h3>
-      <a href="index.html">Beranda</a>
-      <a href="campaigns.html">Campaign</a>
+      <a href="index.php">Beranda</a>
+      <a href="campaigns.php">Campaign</a>
     </div>
     <div class="footer-contact">
       <h3>Kontak</h3>
@@ -187,4 +194,4 @@
 <script src="main.js"></script>
 
 </body>
-</html>
+</php>
