@@ -89,7 +89,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     // Delete uploaded file if database insert fails
                     unlink($file_path);
                 }
-                $stmt->close();
             } else {
                 $error = "Gagal mengunggah bukti transfer. Silakan coba lagi.";
             }

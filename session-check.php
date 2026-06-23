@@ -50,7 +50,7 @@ function isAdminLoggedIn() {
  */
 function logoutUser() {
     session_destroy();
-    header("Location: index.html");
+    header("Location: index.php");
     exit();
 }
 
@@ -60,7 +60,7 @@ function logoutUser() {
  */
 function redirectIfLoggedIn($user_type = 'user') {
     if ($user_type === 'user' && isset($_SESSION['user_id'])) {
-        header("Location: index.html");
+        header("Location: index.php");
         exit();
     } elseif ($user_type === 'admin' && isset($_SESSION['admin_id'])) {
         header("Location: admin-dashboard.php");

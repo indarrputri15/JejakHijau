@@ -64,7 +64,7 @@ if ($user_result) {
 // Fetch pending campaigns (belum diverifikasi)
 $pending_campaigns = [];
 $pending_result = $conn->query("
-    SELECT c.id, c.judul, c.user_id, u.nama_lengkap, c.target_dana, c.lokasi, c.created_at, c.status
+    SELECT c.id, c.judul_campaign, c.user_id, u.nama_lengkap, c.target_dana, c.lokasi, c.created_at, c.status
     FROM campaigns c
     LEFT JOIN users u ON c.user_id = u.id
     WHERE c.status = 'pending'
@@ -79,7 +79,7 @@ if ($pending_result) {
 // Fetch approved campaigns
 $approved_campaigns = [];
 $approved_result = $conn->query("
-    SELECT c.id, c.judul, c.user_id, u.nama_lengkap, c.target_dana, c.dana_terkumpul, c.lokasi, c.created_at, c.status
+    SELECT c.id, c.judul_campaign, c.user_id, u.nama_lengkap, c.target_dana, c.dana_terkumpul, c.lokasi, c.created_at, c.status
     FROM campaigns c
     LEFT JOIN users u ON c.user_id = u.id
     WHERE c.status = 'approved'
@@ -231,7 +231,7 @@ $total_approved = count($approved_campaigns);
         <?php foreach ($pending_campaigns as $index => $campaign): ?>
           <tr>
             <td><?php echo $index + 1; ?></td>
-            <td><?php echo htmlspecialchars($campaign['judul']); ?></td>
+            <td><?php echo htmlspecialchars($campaign['judul_campaign']); ?></td>
             <td><?php echo htmlspecialchars($campaign['nama_lengkap'] ?? 'Unknown'); ?></td>
             <td>Rp<?php echo number_format($campaign['target_dana'], 0, ',', '.'); ?></td>
             <td><?php echo htmlspecialchars($campaign['lokasi']); ?></td>
@@ -290,7 +290,7 @@ $total_approved = count($approved_campaigns);
         <?php foreach ($approved_campaigns as $index => $campaign): ?>
           <tr>
             <td><?php echo $index + 1; ?></td>
-            <td><?php echo htmlspecialchars($campaign['judul']); ?></td>
+            <td><?php echo htmlspecialchars($campaign['judul_campaign']); ?></td>
             <td><?php echo htmlspecialchars($campaign['nama_lengkap'] ?? 'Unknown'); ?></td>
             <td><strong>Rp<?php echo number_format($campaign['dana_terkumpul'] ?? 0, 0, ',', '.'); ?></strong></td>
             <td>Rp<?php echo number_format($campaign['target_dana'], 0, ',', '.'); ?></td>

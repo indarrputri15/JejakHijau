@@ -30,13 +30,14 @@ if (!$campaign) {
 
 // Get donations for this campaign
 $donations = [];
-$result = $conn->query("SELECT u.nama_lengkap, d.nominal, d.pesan, d.created_at FROM donations d JOIN users u ON d.user_id = u.id WHERE d.campaign_id = $campaign_id AND d.status = 'success' ORDER BY d.created_at DESC LIMIT 10");
-
-if ($result) {
-    while ($row = $result->fetch_assoc()) {
-        $donations[] = $row;
-    }
+$stmt = $conn->prepare("SELECT u.nama_lengkap, d.nominal, d.pesan, d.created_at FROM donations d JOIN users u ON d.user_id = u.id WHERE d.campaign_id = ? AND d.status = 'success' ORDER BY d.created_at DESC LIMIT 10");
+$stmt->bind_param("i", $campaign_id);
+$stmt->execute();
+$result = $stmt->get_result();
+while ($row = $result->fetch_assoc()) {
+    $donations[] = $row;
 }
+$stmt->close();
 
 $percentage = $campaign['dana_terkumpul'] > 0 ? ($campaign['dana_terkumpul'] / $campaign['target_dana']) * 100 : 0;
 $percentage = min($percentage, 100);

@@ -49,8 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE php>
+<php lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!-- NAVBAR -->
 <nav class="navbar">
-    <a href="index.html" class="navbar-logo">Jejak<span>Hijau</span></a>
+    <a href="index.php" class="navbar-logo">Jejak<span>Hijau</span></a>
 </nav>
 <!-- NAVBAR END -->
 
@@ -98,14 +98,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <?php if (!empty($error)): ?>
                 <div class="msg-error" id="login-error">
-                    <?php echo htmlspecialchars($error); ?>
+                    <?php echo phpspecialchars($error); ?>
                 </div>
             <?php endif; ?>
 
             <form method="POST" action="login.php" id="form-login">
                 <div class="input-group">
                     <label>Email</label>
-                    <input type="email" name="email" placeholder="Masukkan email" required value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
+                    <input type="email" name="email" placeholder="Masukkan email" required value="<?php echo isset($_POST['email']) ? phpspecialchars($_POST['email']) : ''; ?>">
                 </div>
                 <div class="input-group">
                     <label>Password</label>
@@ -127,4 +127,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <script src="validation.js"></script>
 
 </body>
-</html>
+</php>

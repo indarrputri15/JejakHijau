@@ -97,11 +97,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <button type="submit" class="btn-auth">Login</button>
       </form>
-
-      <div class="bottom-text bottom-text--sm">
-        <p>Email: <strong>admin@jejakhijau.com</strong></p>
-        <p>Password: <strong>admin123</strong></p>
-      </div>
     </div>
 
   </div>
