@@ -18,9 +18,9 @@ Localhost
 - Erlita Jannatul Aulia: F1D02410006
 - Yunda Hayatus Soleha: F1D02410029
 
-### Menu Utama
+## Menu Utama
 
-##  Aktor User
+###  Aktor User
 User merupakan pengguna website yang dapat melakukan donasi campaign lingkungan maupun membuat campaign penghijauan baru.
 
 | No | Menu | Deskripsi |
@@ -36,7 +36,7 @@ User merupakan pengguna website yang dapat melakukan donasi campaign lingkungan 
 | 9 | Edit Profil | Mengubah data diri dan foto profil |
 | 10 | Logout | Keluar dari akun |
 
-##  Aktor Admin
+###  Aktor Admin
 Admin bertugas mengelola dan memantau seluruh aktivitas yang berjalan di platform.
 
 | No | Menu | Deskripsi |
@@ -48,7 +48,7 @@ Admin bertugas mengelola dan memantau seluruh aktivitas yang berjalan di platfor
 | 5 | Kelola Donasi | Memantau dan verifikasi donasi masuk |
 | 6 | Logout | Keluar dari dashboard admin |
 
-### SiteMap
+## SiteMap
 
 JejakHijau/
 ├── index.php                  # Landing page
