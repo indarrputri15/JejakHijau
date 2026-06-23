@@ -1,3 +1,39 @@
+<?php
+
+require_once 'config.php';
+require_once 'session-check.php';
+
+// Redirect jika admin sudah login
+redirectIfLoggedIn('admin');
+
+$error = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = trim($_POST['email'] ?? '');
+    $password = $_POST['password'] ?? '';
+
+    // Validation
+    if (empty($email) || empty($password)) {
+        $error = "Email dan password harus diisi.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = "Format email tidak valid.";
+    } else {
+        // Check admin credentials from config
+        if ($email === $admin_email && password_verify($password, $admin_password_hash)) {
+            // Login successful
+            $_SESSION['admin_id'] = 'admin_' . md5($admin_email);
+            $_SESSION['admin_email'] = $admin_email;
+            
+            // Langsung redirect tanpa pesan
+            header("Location: admin-dashboard.php");
+            exit();
+        } else {
+            $error = "Email atau password admin salah.";
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -21,15 +57,7 @@
 
 <!-- NAVBAR -->
 <nav class="navbar">
-  <a href="index.html" class="navbar-logo">Jejak<span>Hijau</span></a>
-  <ul class="ul-navbar">
-    <li><a href="index.html#beranda">BERANDA</a></li>
-    <li><a href="index.html#dampak">DAMPAK</a></li>
-    <li><a href="index.html#tentang">TENTANG</a></li>
-  </ul>
-  <div class="navbar-extra">
-    <a href="admin-login.html" class="active">ADMIN</a>
-  </div>
+  <a href="index.php" class="navbar-logo">Jejak<span>Hijau</span></a>
 </nav>
 <!-- NAVBAR END -->
 
@@ -52,20 +80,20 @@
     <div class="login-right">
       <h2>Login Admin</h2>
 
-      <div class="msg-error" id="admin-login-error" style="display:none;">
-        <!-- PHP: echo htmlspecialchars($error) -->
-        Pesan error dari server.
-      </div>
+      <?php if (!empty($error)): ?>
+        <div class="msg-error" id="admin-login-error">
+          <?php echo htmlspecialchars($error); ?>
+        </div>
+      <?php endif; ?>
 
       <form method="POST" action="admin-login.php">
         <div class="input-group">
           <label>Email Admin</label>
-          <input type="email" name="email" placeholder="Masukkan email admin" required>
+          <input type="email" name="email" placeholder="Masukkan email admin" required value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
         </div>
         <div class="input-group">
           <label>Password</label>
-          <input type="password" name="password"
-                 placeholder="Masukkan password" required>
+          <input type="password" name="password" placeholder="Masukkan password" required>
         </div>
         <button type="submit" class="btn-auth">Login</button>
       </form>
