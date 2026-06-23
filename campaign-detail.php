@@ -108,14 +108,13 @@ $percentage = min($percentage, 100);
 
 
 <!-- CAMPAIGN DETAIL CONTENT -->
-<section class="form-section">
-    <div class="form-container form-container--lg">
+<section class="campaign-page">
+    <div class="campaign-container">
 
-        <div class="campaign-detail" style="max-width:1000px;margin:auto;">
+        <div class="campaign-detail">
             <!-- Campaign Image -->
-            <div class="campaign-detail-image" style="margin-bottom:30px;">
-                <img src="<?php echo htmlspecialchars($campaign['gambar_sampul']); ?>" alt="<?php echo htmlspecialchars($campaign['judul_campaign']); ?>"
-                    style="width:100%;height:30%;object-fit:cover;border-radius:20px;display:block;">
+            <div class="campaign-detail-image">
+                <img src="<?php echo htmlspecialchars($campaign['gambar_sampul']); ?>" alt="<?php echo htmlspecialchars($campaign['judul_campaign']); ?>">
             </div>
 
             <!-- Campaign Info -->
@@ -126,7 +125,7 @@ $percentage = min($percentage, 100);
                 <!-- Progress -->
                 <div class="campaign-progress">
                     <div class="progress-bar">
-                    <div class="progress-fill" style="width: <?php echo $percentage; ?>%;"> <?php echo round($percentage); ?>%</div>
+                    <div class="progress-fill" style="width: <?php echo $percentage; ?>%;"></div>
                     </div>
                     <div class="progress-info">
                         <p><strong>Rp<?php echo number_format($campaign['dana_terkumpul'], 0, ',', '.'); ?></strong> dari <strong>Rp<?php echo number_format($campaign['target_dana'], 0, ',', '.'); ?></strong></p>
