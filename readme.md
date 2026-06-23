@@ -49,7 +49,7 @@ Admin bertugas mengelola dan memantau seluruh aktivitas yang berjalan di platfor
 | 6 | Logout | Keluar dari dashboard admin |
 
 ## SiteMap
-
+```
 JejakHijau/
 ├── index.php                  # Landing page
 ├── login.php                  # Login user
@@ -74,7 +74,7 @@ JejakHijau/
 └── uploads/                   # File upload user
     ├── campaigns/             # Gambar campaign
     └── donations/             # Bukti transfer
-
+```
 
 ## Teknologi
 - Frontend : HTML, JavaScript, CSS
