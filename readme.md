@@ -18,41 +18,75 @@ Localhost
 - Erlita Jannatul Aulia: F1D02410006
 - Yunda Hayatus Soleha: F1D02410029
 
-## Menu Utama
-### Aktor User
+### Menu Utama
+
+##  Aktor User
 User merupakan pengguna website yang dapat melakukan donasi campaign lingkungan maupun membuat campaign penghijauan baru.
 
-Fitur:
-- Login & Register
-- Melihat Campaign
-- Donasi Campaign
-- Membuat Campaign
-- Upload Data Diri
-- Riwayat Kontribusi
-- Edit Profile
-- Membuat form bantuan
-- Logout
+| No | Menu | Deskripsi |
+|----|------|-----------|
+| 1 | Register | Membuat akun baru |
+| 2 | Login | Masuk ke akun yang sudah terdaftar |
+| 3 | Beranda | Halaman utama berisi informasi platform |
+| 4 | Campaign | Melihat daftar campaign lingkungan yang tersedia |
+| 5 | Detail Campaign | Melihat informasi lengkap dan donatur campaign |
+| 6 | Donasi | Mengisi form donasi dan upload bukti transfer |
+| 7 | Buat Campaign | Membuat campaign penghijauan baru |
+| 8 | Profil | Melihat data diri dan riwayat kampanye & donasi |
+| 9 | Edit Profil | Mengubah data diri dan foto profil |
+| 10 | Logout | Keluar dari akun |
 
-### Aktor Admin
-Admin bertugas mengelola data website dan memantau campaign yang berjalan.
+##  Aktor Admin
+Admin bertugas mengelola dan memantau seluruh aktivitas yang berjalan di platform.
 
-Fitur:
-- Login Admin
-- Dashboard Admin
-- Kelola Data User
-- Kelola Campaign
-- Kelola Donasi
-- Hapus Campaign
-- Logout
+| No | Menu | Deskripsi |
+|----|------|-----------|
+| 1 | Login Admin | Masuk ke dashboard khusus admin |
+| 2 | Dashboard | Memantau statistik user, campaign, dan donasi |
+| 3 | Kelola User | Melihat daftar dan detail data seluruh user |
+| 4 | Kelola Campaign | Menyetujui atau menghapus campaign |
+| 5 | Kelola Donasi | Memantau dan verifikasi donasi masuk |
+| 6 | Logout | Keluar dari dashboard admin |
+
+### SiteMap
+
+JejakHijau/
+├── index.php                  # Landing page
+├── login.php                  # Login user
+├── signup.php                 # Registrasi user
+├── logout.php                 # Logout session
+├── campaigns.php              # Daftar campaign
+├── campaign-detail.php        # Detail campaign
+├── donation.php               # Form & proses donasi
+├── create-campaign.php        # Buat campaign baru
+├── profile.php                # Profil user
+├── edit-profile.php           # Edit profil user
+├── admin-login.php            # Login admin
+├── admin-dashboard.php        # Dashboard admin
+├── users-detail.php           # Detail user (admin)
+├── config.php                 # Koneksi DB & konfigurasi
+├── session-check.php          # Helper session
+├── validation.js              # Validasi form (JS)
+├── main.js                    # Script utama (JS)
+├── style.css                  # Stylesheet utama
+├── database_jejakhijau.sql    # Struktur & data database
+├── assets/                    # Gambar & media
+└── uploads/                   # File upload user
+    ├── campaigns/             # Gambar campaign
+    └── donations/             # Bukti transfer
+
 
 ## Teknologi
-- HTML
-- CSS
-- JavaScript
-- PHP
-- MySQL
+- Frontend : HTML, JavaScript, CSS
+- Backend : PHP
+- Database : MySQL
+- Local Server : XAMPP
+- Desaign Support : Figma
+- Version Control : Git/Github
 
 ## Requirement
+
+Untuk menggunakan JejakHijau ini, anda harus menginstall dan konfigurasi berikut:
 - XAMPP
 - PHP 8+
 - Browser
