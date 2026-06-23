@@ -3,6 +3,8 @@
  * JejakHijau - Create Campaign
  * GET dan POST untuk membuat campaign baru
  */
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 require_once 'config.php';
 require_once 'session-check.php';
@@ -55,14 +57,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $dana_terkumpul = 0;
                 
                 $stmt = $conn->prepare("INSERT INTO campaigns (user_id, judul_campaign, deskripsi, target_dana, dana_terkumpul, gambar_sampul, status, lokasi, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                $stmt->bind_param("isddsdsss", $user_id, $judul_campaign, $deskripsi, $target_dana, $dana_terkumpul, $file_path, $status, $lokasi, $created_at, $updated_at);
+                if (!$stmt) {
+                    die("Prepare Error: " . $conn->error);
+                }
+                $stmt->bind_param("issddsssss", $user_id, $judul_campaign, $deskripsi, $target_dana, $dana_terkumpul, $file_path, $status, $lokasi, $created_at, $updated_at);
                 
-                if ($stmt->execute()) {
-                    $success = "Campaign berhasil diajukan! Admin akan memverifikasinya.";
+                if (!$stmt->execute()) {
+                    die("Execute Error: " . $stmt->error . "<br>MySQL Error: " . $conn->error);
                 } else {
-                    $error = "Terjadi kesalahan saat menyimpan campaign.";
-                    // Delete uploaded file if database insert fails
-                    unlink($file_path);
+                    header("Location: campaigns.php?success=1");
+                    exit();
                 }
                 $stmt->close();
             } else {

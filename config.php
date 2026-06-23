@@ -21,7 +21,7 @@ $conn->set_charset("utf8");
 // Email and password for admin login
 // Password is hashed with password_hash()
 $admin_email = "admin@jejakhijau.com";
-$admin_password_hash = "$2y$10$vgeDFeX/.xWELKCvcsospevl2aAjf3ZZfi.cLpFJizFs5ahO7ZNB"; // password: admin123
+$admin_password_hash = '$2y$10$.bJeAc6wD8wv5Xtr9hUfiOVLdK848okflwnPK2Qcb0yVYKB7haXX.'; // password: admin123
 
 // ==================== APPLICATION SETTINGS ====================
 $app_name = "JejakHijau";
@@ -42,7 +42,7 @@ if (!is_dir($upload_dir_donations)) {
 
 // ==================== ERROR HANDLING ====================
 error_reporting(E_ALL);
-ini_set('display_errors', 0); // Don't display errors in production
+ini_set('display_errors', 1); // tampilin error
 ini_set('log_errors', 1);
 ini_set('error_log', 'logs/error.log');
 

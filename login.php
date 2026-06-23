@@ -11,6 +11,10 @@ require_once 'session-check.php';
 redirectIfLoggedIn('user');
 
 $error = '';
+$success = '';
+if (isset($_GET['success'])) {
+    $success = "Registrasi berhasil. Silakan login.";
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
@@ -24,6 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         // Check user in database
         $stmt = $conn->prepare("SELECT id, nama_lengkap, email, password FROM users WHERE email = ?");
+        if (!$stmt) {
+            die($conn->error);
+        }
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -49,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<!DOCTYPE php>
+<!DOCTYPE html>
 <php lang="id">
 <head>
     <meta charset="UTF-8">
@@ -96,16 +103,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="login-right">
             <h2>Login Account</h2>
 
+            <?php if (!empty($success)): ?>
+                <div class="msg-success">
+                    <?php echo htmlspecialchars($success); ?>
+                </div>
+            <?php endif; ?>
             <?php if (!empty($error)): ?>
                 <div class="msg-error" id="login-error">
-                    <?php echo phpspecialchars($error); ?>
+                    <?php echo htmlspecialchars($error); ?>
                 </div>
             <?php endif; ?>
 
             <form method="POST" action="login.php" id="form-login">
                 <div class="input-group">
                     <label>Email</label>
-                    <input type="email" name="email" placeholder="Masukkan email" required value="<?php echo isset($_POST['email']) ? phpspecialchars($_POST['email']) : ''; ?>">
+                    <input type="email" name="email" placeholder="Masukkan email" required value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
                 </div>
                 <div class="input-group">
                     <label>Password</label>
@@ -127,4 +139,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <script src="validation.js"></script>
 
 </body>
-</php>
+</html>

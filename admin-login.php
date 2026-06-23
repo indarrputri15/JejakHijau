@@ -1,6 +1,8 @@
 <?php
 
 require_once 'config.php';
+// echo password_verify("admin123", $admin_password_hash) ? "BENAR" : "SALAH";
+// exit();
 require_once 'session-check.php';
 
 // Redirect jika admin sudah login

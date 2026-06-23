@@ -30,7 +30,7 @@ if ($result) {
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
 
     <!-- ICON -->
     <script src="https://unpkg.com/feather-icons"></script>

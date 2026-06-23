@@ -115,8 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!-- HEADER -->
 <section class="header-bantuan">
-    <span>Edit Profil</span>
-    <h1>Perbarui Data Profil Anda</h1>
+    <h1>Edit Profil</h1>
     <p>Ubah informasi profil Anda</p>
 </section>
 <!-- HEADER END -->

@@ -45,49 +45,6 @@ function setInputValue(selector, value) {
   return true;
 }
 
-
-// POPUP/NOTIFICATION SYSTEM
-
-//   Show success notification popup
-function showSuccessPopup(message, duration = 2000) {
-  // Remove existing popups
-  const existingPopups = document.querySelectorAll('[data-popup="success"]');
-  existingPopups.forEach(popup => popup.remove());
-
-  const popup = document.createElement('div');
-  popup.setAttribute('data-popup', 'success');
-  popup.setAttribute('role', 'alert');
-  popup.setAttribute('aria-live', 'polite');
-  
-  popup.style.cssText = `
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #eafaf1;
-    border: 2px solid #27ae60;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 9999;
-    text-align: center;
-    max-width: 400px;
-    animation: slideDown 0.3s ease-out;
-  `;
-  
-  popup.innerHTML = `
-    <h3 style="color: #27ae60; margin-bottom: 15px; margin-top: 0;">✓ ${escapeHtml(message)}</h3>
-    <p style="color: #1e8449; font-size: 14px; margin: 0;">Mengalihkan dalam 2 detik...</p>
-  `;
-  
-  document.body.appendChild(popup);
-  
-  // Auto remove setelah duration
-  setTimeout(() => {
-    popup.remove();
-  }, duration);
-}
-
 // Error message
 
 function showErrorPopup(message) {
@@ -145,7 +102,7 @@ function showErrorPopup(message) {
 function showInlineError(selector, message) {
   const errorEl = safeQuerySelector(selector);
   if (!errorEl) {
-    console.warn(`⚠️ Error element not found: ${selector}`);
+    console.warn(`Error element not found: ${selector}`);
     return;
   }
   
@@ -193,8 +150,6 @@ function isValidPassword(password) {
 
 
 //   Validasi nomor HP Indonesia
-
-
 function isValidPhoneNumber(phone) {
   const phoneRegex = /^(\+62|0)[0-9]{9,12}$/;
   return phoneRegex.test(phone.replace(/\s/g, ''));
@@ -374,35 +329,25 @@ function updateEstimasi() {
 
 function initializeFormValidations() {
   
-  // ── LOGIN FORM ──────────────────────────────────────────
-  const loginForm = safeQuerySelector('#form-login');
-  if (loginForm) {
-    loginForm.addEventListener('submit', function(e) {
+  // LOGIN FORM
+const loginForm = safeQuerySelector('#form-login');
+if (loginForm) {
+  loginForm.addEventListener('submit', function(e) {
+    if (!validateLoginForm()) {
       e.preventDefault();
-      
-      if (validateLoginForm()) {
-        showSuccessPopup('Login berhasil!', 1500);
-        setTimeout(() => {
-          window.location.href = 'index.html';
-        }, 1500);
-      }
-    });
-  }
+    }
+  });
+}
 
-  // SIGNUP FORM 
-  const signupForm = safeQuerySelector('#form-signup');
-  if (signupForm) {
-    signupForm.addEventListener('submit', function(e) {
+  // SIGNUP FORM
+const signupForm = safeQuerySelector('#form-signup');
+if (signupForm) {
+  signupForm.addEventListener('submit', function(e) {
+    if (!validateSignupForm()) {
       e.preventDefault();
-      
-      if (validateSignupForm()) {
-        showSuccessPopup('Akun berhasil dibuat!', 2000);
-        setTimeout(() => {
-          window.location.href = 'login.html';
-        }, 2000);
-      }
-    });
-  }
+    }
+  });
+}
 
   // DONATION FORM 
   const donationForm = safeQuerySelector('#form-donasi');

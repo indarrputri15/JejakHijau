@@ -84,9 +84,7 @@ if (!$user) {
 
 <!-- HEADER -->
 <section class="header-bantuan">
-    <span>Halaman Profil</span>
     <h1>Profil Anda</h1>
-    <p>Kelola data profil Anda di sini</p>
 </section>
 <!-- HEADER END -->
 

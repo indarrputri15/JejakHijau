@@ -53,8 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->bind_param("ssssssss", $nama_lengkap, $email, $no_hp, $provinsi, $alamat, $hashed_password, $created_at, $created_at);
 
             if ($stmt->execute()) {
-                $success = "Akun berhasil dibuat. Silakan login.";
-                header("Refresh: 2; url=login.php");
+                header("Location: login.php?success=1");
+                exit();
             } else {
                 $error = "Terjadi kesalahan. Silakan coba lagi.";
             }
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<!DOCTYPE php>
+<!DOCTYPE html>
 <php lang="id">
 <head>
     <meta charset="UTF-8">
@@ -112,40 +112,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <?php if (!empty($error)): ?>
                 <div class="msg-error" id="signup-error">
-                    <?php echo phpspecialchars($error); ?>
+                    <?php echo htmlspecialchars($error); ?>
                 </div>
             <?php endif; ?>
 
             <?php if (!empty($success)): ?>
                 <div class="msg-success" id="signup-success">
-                    <?php echo phpspecialchars($success); ?>
+                    <?php echo htmlspecialchars($success); ?>
                 </div>
             <?php endif; ?>
 
             <form method="POST" action="signup.php" id="form-signup">
                 <div class="input-group">
                     <label>Nama Lengkap</label>
-                    <input type="text" name="nama_lengkap" placeholder="Masukkan nama lengkap" required value="<?php echo isset($_POST['nama_lengkap']) ? phpspecialchars($_POST['nama_lengkap']) : ''; ?>">
+                    <input type="text" name="nama_lengkap" placeholder="Masukkan nama lengkap" required value="<?php echo isset($_POST['nama_lengkap']) ? htmlspecialchars($_POST['nama_lengkap']) : ''; ?>">
                 </div>
 
                 <div class="input-group">
                     <label>Email</label>
-                    <input type="email" name="email" placeholder="Masukkan email" required value="<?php echo isset($_POST['email']) ? phpspecialchars($_POST['email']) : ''; ?>">
+                    <input type="email" name="email" placeholder="Masukkan email" required value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
                 </div>
 
                 <div class="input-group">
                     <label>No. Handphone</label>
-                    <input type="tel" name="no_hp" placeholder="Masukkan nomor handphone" required value="<?php echo isset($_POST['no_hp']) ? phpspecialchars($_POST['no_hp']) : ''; ?>">
+                    <input type="tel" name="no_hp" placeholder="Masukkan nomor handphone" required value="<?php echo isset($_POST['no_hp']) ? htmlspecialchars($_POST['no_hp']) : ''; ?>">
                 </div>
 
                 <div class="input-group">
                     <label>Provinsi</label>
-                    <input type="text" name="provinsi" placeholder="Masukkan provinsi" required value="<?php echo isset($_POST['provinsi']) ? phpspecialchars($_POST['provinsi']) : ''; ?>">
+                    <input type="text" name="provinsi" placeholder="Masukkan provinsi" required value="<?php echo isset($_POST['provinsi']) ? htmlspecialchars($_POST['provinsi']) : ''; ?>">
                 </div>
 
                 <div class="input-group">
                     <label>Alamat</label>
-                    <textarea name="alamat" placeholder="Masukkan alamat lengkap" rows="3" required><?php echo isset($_POST['alamat']) ? phpspecialchars($_POST['alamat']) : ''; ?></textarea>
+                    <textarea name="alamat" placeholder="Masukkan alamat lengkap" rows="3" required><?php echo isset($_POST['alamat']) ? htmlspecialchars($_POST['alamat']) : ''; ?></textarea>
                 </div>
 
                 <div class="input-group">
@@ -177,4 +177,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <script src="validation.js"></script>
 
 </body>
-</php>
+</html>

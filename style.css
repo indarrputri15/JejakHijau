@@ -1135,137 +1135,135 @@ input, select, textarea, button {
    Seksi: Cover Image, Info Cards, Lokasi, Tombol Donasi
    ============================================================ */
 
-/* [campaign-detail.php — section gambar cover] */
-.campaign-detail-section {
-  padding-top: 80px;
-  padding-bottom: 40px;
+/* ===========================
+   DETAIL CAMPAIGN
+=========================== */
+
+.detail-container{
+    max-width:1100px;
+    margin:40px auto;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-/* [campaign-detail.php — wrapper konten max 1000px] */
-.campaign-detail-inner {
-  max-width: 1000px;
-  margin: auto;
-  padding: 0 40px;
+/* Gambar */
+
+.detail-image{
+    width:100%;
+    height:380px;      /* sebelumnya terlalu tinggi */
+    object-fit:cover;
+    display:block;
 }
 
-/* [campaign-detail.php — gambar cover]*/
-.campaign-cover-img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 20px;
+/* Isi */
+
+.detail-content{
+    padding:40px 55px;
 }
 
-/* [campaign-detail.php — judul h1 campaign]*/
-.campaign-title-h1 {
-  font-size: 42px;
-  color: #1a3728;
-  margin-bottom: 20px;
-  font-family: 'Playfair Display', serif;
+/* Judul */
+
+.detail-title{
+    font-size:48px;
+    font-family:"Cormorant Garamond", serif;
+    color:#143d2e;
+    text-align:center;
+    margin-bottom:30px;
 }
 
-/* [campaign-detail.php — kartu info (Dana, Tentang, Lokasi)]*/
-.campaign-info-card {
-  background-color: white;
-  padding: 30px;
-  border-radius: 15px;
-  border: 1px solid #d8e7dc;
-  margin-bottom: 30px;
+/* Lokasi */
+
+.detail-location{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#444;
+    font-size:18px;
+    margin-bottom:30px;
 }
 
-/* [campaign-detail.php — judul dalam kartu info (Dana Terkumpul, Tentang, Lokasi)] */
-.campaign-info-card h3 {
-  color: #1a3728;
-  margin-bottom: 20px;
+.detail-location i{
+    color:#2d6a4f;
+    font-size:22px;
 }
 
-.campaign-info-card h3.mb-15 {
-  margin-bottom: 15px;
+/* Progress */
+
+.progress-wrapper{
+    margin-bottom:25px;
 }
 
-/* [campaign-detail.php — baris dana terkumpul vs target] */
-.dana-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
-  align-items: center;
+.progress-bar{
+    width:100%;
+    height:14px;
+    background:#e5e5e5;
+    border-radius:20px;
+    overflow:hidden;
 }
 
-/* [campaign-detail.php — label "Total Dana" / "Target"] */
-.dana-label {
-  color: #6b8f76;
-  font-size: 14px;
+.progress-fill{
+    height:100%;
+    background:linear-gradient(90deg,#2d6a4f,#52b788);
+    border-radius:20px;
 }
 
-/* [campaign-detail.php — angka dana terkumpul (hijau)] */
-.dana-amount-green {
-  font-size: 24px;
-  font-weight: bold;
-  color: #2d6a4f;
+/* Nominal */
+
+.donation-info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:12px;
+    font-size:17px;
 }
 
-/* [campaign-detail.php — angka target (gelap)]*/
-.dana-amount-dark {
-  font-size: 24px;
-  font-weight: bold;
-  color: #1a3728;
+.donation-info strong{
+    color:#143d2e;
+    font-size:22px;
 }
 
-/* [campaign-detail.php — kolom kanan (target rata kanan)]*/
-.dana-right {
-  text-align: right;
+.percent{
+    font-weight:bold;
+    color:#2d6a4f;
 }
 
-/* [campaign-detail.php — progress bar besar dengan persentase]*/
-.progress-bar--lg {
-  height: 30px;
-  background-color: #edf7ef;
-  border-radius: 20px;
-  overflow: hidden;
-  border: 2px solid #d8e7dc;
-  width: 100%;
+/* Tombol */
+
+.btn-donasi{
+    margin-top:30px;
+    display:inline-block;
+    background:#2d6a4f;
+    color:#fff;
+    text-decoration:none;
+    padding:15px 45px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.3s;
 }
 
-/* [campaign-detail.php — fill progress bar besar] */
-.progress-fill--lg {
-  height: 100%;
-  background-color: #52b788;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
+.btn-donasi:hover{
+    background:#1b4332;
 }
 
-/* [campaign-detail.php — teks deskripsi campaign] */
-.campaign-desc-text {
-  color: #3d5a47;
-  line-height: 1.8;
-  font-size: 15px;
+/* Deskripsi */
+
+.description{
+    margin-top:45px;
 }
 
-/* [campaign-detail.php — teks lokasi] */
-.campaign-lokasi-text {
-  color: #3d5a47;
-  font-size: 15px;
+.description h3{
+    color:#143d2e;
+    font-size:32px;
+    margin-bottom:15px;
 }
 
-/* [campaign-detail.php — wrapper Google Maps iframe] */
-.map-wrapper {
-  margin-top: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  height: 300px;
+.description p{
+    line-height:1.9;
+    color:#555;
+    font-size:18px;
 }
-
-/* [campaign-detail.php — area tombol donasi di bawah] */
-.donate-action {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-
 /* ============================================================
    12. HALAMAN: login.php & signup.php
    ============================================================ */
