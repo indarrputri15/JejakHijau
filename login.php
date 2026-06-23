@@ -1,20 +1,28 @@
 <?php
+/**
+ * JejakHijau - User Login
+ * POST: login form
+ */
+
 require_once 'config.php';
 require_once 'session-check.php';
 
-redirectIfLoggedIn('user'); 
+// Redirect if already logged in
+redirectIfLoggedIn('user');
+
 $error = '';
-$success = '';
 
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = trim($_POST['email']);
-    $password = trim($_POST['password']);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = trim($_POST['email'] ?? '');
+    $password = $_POST['password'] ?? '';
 
-    // Validasi input
+    // Validation
     if (empty($email) || empty($password)) {
         $error = "Email dan password harus diisi.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = "Format email tidak valid.";
     } else {
-        // Cek user di database
+        // Check user in database
         $stmt = $conn->prepare("SELECT id, nama_lengkap, email, password FROM users WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -23,18 +31,18 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($result->num_rows === 1) {
             $user = $result->fetch_assoc();
             if (password_verify($password, $user['password'])) {
-                // Login sukses
+                // Login successful - langsung redirect tanpa pesan
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['user_name'] = $user['nama_lengkap'];
                 $_SESSION['user_email'] = $user['email'];
                 
-                $success = "Login berhasil. Mengalihkan...";
-                header("Refresh: 2; url=profile.php");
+                header("Location: index.php");
+                exit();
             } else {
-                $error = "Password salah.";
+                $error = "Email atau password salah.";
             }
         } else {
-            $error = "Email tidak ditemukan.";
+            $error = "Email atau password salah.";
         }
         $stmt->close();
     }
@@ -44,80 +52,72 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login | JejakHijau</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | JejakHijau</title>
 
-  <!-- FONT -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
-  <!-- ICON -->
-  <script src="https://unpkg.com/feather-icons"></script>
+    <!-- ICON -->
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body>
 
 <!-- NAVBAR -->
 <nav class="navbar">
-  <a href="index.html" class="navbar-logo">Jejak<span>Hijau</span></a>
+    <a href="index.html" class="navbar-logo">Jejak<span>Hijau</span></a>
 </nav>
 <!-- NAVBAR END -->
 
 
 <!-- LOGIN SECTION -->
 <section class="login-section">
-  <div class="login-container">
+    <div class="login-container">
 
-    <!-- LEFT -->
-    <div class="login-left">
-      <span>Selamat Datang</span>
-      <h1>Login Ke JejakHijau 🌱</h1>
-      <p>
-        Masuk untuk mulai berdonasi,
-        membuat campaign,
-        atau mengelola sistem.
-      </p>
-    </div>
-
-    <!-- RIGHT -->
-    <div class="login-right">
-      <h2>Login Account</h2>
-
-         <!-- PHP untuk menampilkan pesan error dari proses login -->
-        <?php if (!empty($error)) : ?>
-          <div class="msg-error" id="login-error" style="display:none;">
-            <?php echo htmlspecialchars($error); ?>
-          </div>
-        <?php endif; ?>
-
-        <!-- Sukses login -->
-        <?php if (!empty($success)) : ?>
-          <div class="msg-success" id="login-success" style="display:none;">
-            <?php echo htmlspecialchars($success); ?>
-          </div>
-        <?php endif; ?>
-
-       <form method="POST" action="login_process.php" id="form-login">
-        <div class="input-group">
-          <label>Email</label>
-          <input type="email" name="email" placeholder="Masukkan email" required>
+        <!-- LEFT -->
+        <div class="login-left">
+            <span>Selamat Datang</span>
+            <h1>Login Ke JejakHijau 🌱</h1>
+            <p>
+                Masuk untuk mulai berdonasi,
+                membuat campaign,
+                atau mengelola sistem.
+            </p>
         </div>
-        <div class="input-group">
-          <label>Password</label>
-          <input type="password" name="password" placeholder="Masukkan password" required>
+
+        <!-- RIGHT -->
+        <div class="login-right">
+            <h2>Login Account</h2>
+
+            <?php if (!empty($error)): ?>
+                <div class="msg-error" id="login-error">
+                    <?php echo htmlspecialchars($error); ?>
+                </div>
+            <?php endif; ?>
+
+            <form method="POST" action="login.php" id="form-login">
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="Masukkan email" required value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Masukkan password" required>
+                </div>
+                <button type="submit" class="btn-auth">Login</button>
+            </form>
+
+            <div class="bottom-text">Belum punya akun?<a href="signup.php">Daftar sekarang</a></div>
         </div>
-        <button type="submit" class="btn-auth">Login</button>
-      </form>
 
-      <div class="bottom-text">Belum punya akun?<a href="signup.html">Daftar sekarang</a></div>
     </div>
-
-  </div>
 </section>
 <!-- LOGIN SECTION END -->
 
