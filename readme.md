@@ -107,11 +107,11 @@ Untuk menggunakan JejakHijau ini, anda harus menginstall dan konfigurasi berikut
 - Hipotesis penyebab: File validation.js melakukan e.preventDefault() yang menghentikan form submission sebelum request terkirim ke server.
 - Fix: Memodifikasi validation.js agar e.preventDefault() hanya dijalankan jika validation gagal, memungkinkan form submit ke server jika validation sukses.
 - Bukti: Perubahan kode yang dilakukan
-<img src="assets/perbaikan-bug2.png" alt="BUG 2" width="700">
+<img src="assets/perbaikan-bug2.png" alt="BUG 2" width="400">
 
 
 ## AI Usage Statement
-##### 1
+#### 1
 
 1. Tool                           : ChatGPT
 2. Untuk apa                      : Brainstorming dan diskusi solusi pemrograman
@@ -121,7 +121,7 @@ Untuk menggunakan JejakHijau ini, anda harus menginstall dan konfigurasi berikut
 4. Bagian output AI yang dipakai  : Penjelasan konsep, saran perbaikan kode.
 5. Bagian yang saya ubah + alasan : Kode dan implementasi akhir disesuaikan kembali dengan kebutuhan proyek, alur sistem yang digunakan dan kesanggupan dari kompleksitas perancangan web.
 
-##### 2
+#### 2
 
 1. Tool                           : Claude
 2. Untuk apa                      : Mencari bug dan mengevaluasi keanehan pada sistem
@@ -132,7 +132,7 @@ Untuk menggunakan JejakHijau ini, anda harus menginstall dan konfigurasi berikut
 4. Bagian output AI yang dipakai  : Kode implementasi perbaikan dari kode yang salah sebelumnya.
 5. Bagian yang saya ubah + alasan : Menambahkan ataupun mengubah kode yang sebelumnya terdapat error diantaranya terdapat pada bug yang telah dijelaskan sebelumnya
 
-##### 3
+#### 3
 
 1. Tool                           : Claude
 2. Untuk apa                      : Referensi dan inspirasi tampilan User Interface (UI)
