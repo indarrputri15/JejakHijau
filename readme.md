@@ -32,8 +32,8 @@ User merupakan pengguna website yang dapat melakukan donasi campaign lingkungan 
 | 5 | Detail Campaign | Melihat informasi lengkap dan donatur campaign |
 | 6 | Donasi | Mengisi form donasi dan upload bukti transfer |
 | 7 | Buat Campaign | Membuat campaign penghijauan baru |
-| 8 | Profil | Melihat data diri dan riwayat kampanye & donasi |
-| 9 | Edit Profil | Mengubah data diri dan foto profil |
+| 8 | Profil | Melihat data diri |
+| 9 | Edit Profil | Mengubah data diri |
 | 10 | Logout | Keluar dari akun |
 
 ###  Aktor Admin
@@ -42,10 +42,10 @@ Admin bertugas mengelola dan memantau seluruh aktivitas yang berjalan di platfor
 | No | Menu | Deskripsi |
 |----|------|-----------|
 | 1 | Login Admin | Masuk ke dashboard khusus admin |
-| 2 | Dashboard | Memantau statistik user, campaign, dan donasi |
-| 3 | Kelola User | Melihat daftar dan detail data seluruh user |
-| 4 | Kelola Campaign | Menyetujui atau menghapus campaign |
-| 5 | Kelola Donasi | Memantau dan verifikasi donasi masuk |
+| 2 | Dashboard | Memantau data user, campaign aktif, dan verifikasi campaign user |
+| 3 | Kelola User | Melihat data dan aktifitas riwayat donasi dan campaign |
+| 4 | Kelola Campaign | Melihat campaign yang aktif dan menghapus campaign yang aktif |
+| 5 | Verifikasi Campaign | Menyetujui/menolak/menghapus campaign |
 | 6 | Logout | Keluar dari dashboard admin |
 
 ## SiteMap
