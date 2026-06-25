@@ -43,8 +43,8 @@ Admin bertugas mengelola dan memantau seluruh aktivitas yang berjalan di platfor
 |----|------|-----------|
 | 1 | Login Admin | Masuk ke dashboard khusus admin |
 | 2 | Dashboard | Memantau data user, campaign aktif, dan verifikasi campaign user |
-| 3 | Kelola User | Melihat data dan aktifitas riwayat donasi dan campaign |
-| 4 | Kelola Campaign | Melihat campaign yang aktif dan menghapus campaign yang aktif |
+| 3 | Monitoring User | Melihat data dan aktifitas riwayat donasi dan campaign |
+| 4 | Monitoring Campaign | Melihat campaign yang aktif dan menghapus campaign yang aktif |
 | 5 | Verifikasi Campaign | Menyetujui/menolak/menghapus campaign |
 | 6 | Logout | Keluar dari dashboard admin |
 
