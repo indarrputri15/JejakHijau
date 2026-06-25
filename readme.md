@@ -81,8 +81,6 @@ JejakHijau/
 - Backend : PHP
 - Database : MySQL
 - Local Server : XAMPP
-- Desaign Support : Figma
-- Version Control : Git/Github
 
 ## Requirement
 
